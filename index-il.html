@@ -162,35 +162,33 @@ DEFAULT: '8px',
 
 <nav class="fixed w-full z-50 transition-all duration-300" id="mainNav">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-16">
-      <!-- לוגו -->
+    <div class="flex justify-between h-16 items-center">
+      <!-- Logo -->
       <div class="flex items-center">
         <a href="/">
           <img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/28f95b224462cb1a70de312f51c49b10.png" alt="לוגו" class="h-8">
         </a>
       </div>
 
-      <!-- תפריט דסקטופ עם שפות -->
-      <div class="hidden md:flex items-center space-x-8 w-full">
-        <div class="flex space-x-8">
-          <a href="/what-we-do.html" class="text-white hover:text-primary transition-colors duration-300">מה אנחנו עושים</a>
-          <a href="/how-we-do-it.html" class="text-white hover:text-primary transition-colors duration-300">איך אנחנו עושים את זה</a>
-          <a href="#blog" class="text-white hover:text-primary transition-colors duration-300">בלוג</a>
-          <a href="#" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap hover:bg-white hover:text-[#FF0000] transition-colors duration-300"
-             onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';">
-            בואו נתחיל
-          </a>
-        </div>
-
-        <!-- שפות מימין -->
-        <div class="flex items-center space-x-4 ml-auto">
-          <a href="index-es.html" class="text-white hover:text-primary transition-colors duration-300">ES</a>
-          <a href="index-il.html" class="text-white hover:text-primary transition-colors duration-300">IL</a>
-          <a href="index-ja.html" class="text-white hover:text-primary transition-colors duration-300">JP</a>
-        </div>
+      <!-- Menú principal -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="/what-we-do.html" class="text-white hover:text-primary transition-colors duration-300">מה אנחנו עושים</a>
+        <a href="/how-we-do-it.html" class="text-white hover:text-primary transition-colors duration-300">איך אנחנו עושים את זה</a>
+        <a href="#blog" class="text-white hover:text-primary transition-colors duration-300">בלוג</a>
+        <a href="#" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap hover:bg-white hover:text-[#FF0000] transition-colors duration-300"
+           onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';">
+          בואו נתחיל
+        </a>
       </div>
 
-      <!-- תפריט מובייל -->
+      <!-- Letras de idiomas a la derecha -->
+      <div class="hidden md:flex items-center space-x-8 ml-auto">
+        <a href="index-es.html" class="text-white hover:text-primary transition-colors duration-300">ES</a>
+        <a href="index-il.html" class="text-white hover:text-primary transition-colors duration-300">IL</a>
+        <a href="index-ja.html" class="text-white hover:text-primary transition-colors duration-300">JP</a>
+      </div>
+
+      <!-- Menú móvil -->
       <div class="md:hidden flex items-center">
         <button class="text-white">
           <div class="w-8 h-8 flex items-center justify-center">
@@ -201,6 +199,7 @@ DEFAULT: '8px',
     </div>
   </div>
 </nav>
+
 
 
 <!-- Hero Section -->
