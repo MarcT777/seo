@@ -162,12 +162,15 @@ DEFAULT: '8px',
 
 <nav class="fixed w-full z-50 transition-all duration-300" id="mainNav">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between h-16">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
       <div class="flex items-center">
         <a href="/">
           <img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/28f95b224462cb1a70de312f51c49b10.png" alt="Logo" class="h-8">
         </a>
       </div>
+
+      <!-- Menú escritorio -->
       <div class="hidden md:flex items-center space-x-8">
         <a href="/what-we-do.html" class="text-white hover:text-primary transition-colors duration-300">What we do</a>
         <a href="/how-we-do-it.html" class="text-white hover:text-primary transition-colors duration-300">How we do it</a>
@@ -176,7 +179,16 @@ DEFAULT: '8px',
            onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';">
           Let's get started
         </a>
+
+        <!-- Idiomas alineados a la derecha -->
+        <div class="flex items-center space-x-4 ml-6">
+          <a href="index-es.html" class="text-white hover:text-primary transition-colors duration-300">ES</a>
+          <a href="index-il.html" class="text-white hover:text-primary transition-colors duration-300">IL</a>
+          <a href="index-ja.html" class="text-white hover:text-primary transition-colors duration-300">JP</a>
+        </div>
       </div>
+
+      <!-- Menú móvil -->
       <div class="md:hidden flex items-center">
         <button class="text-white">
           <div class="w-8 h-8 flex items-center justify-center">
@@ -185,12 +197,6 @@ DEFAULT: '8px',
         </button>
       </div>
     </div>
-  </div>
-  <!-- Enlaces de idioma -->
-  <div class="flex justify-center space-x-4 bg-gray-800 py-2">
-    <a href="index-es.html" class="text-white hover:text-primary">ES</a>
-    <a href="index-il.html" class="text-white hover:text-primary">IL</a>
-    <a href="index-ja.html" class="text-white hover:text-primary">JP</a>
   </div>
 </nav>
 
