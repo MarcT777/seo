@@ -170,18 +170,20 @@ DEFAULT: '8px',
         </a>
       </div>
 
-      <!-- תפריט דסקטופ -->
-      <div class="hidden md:flex items-center space-x-8">
-        <a href="/what-we-do.html" class="text-white hover:text-primary transition-colors duration-300">מה אנחנו עושים</a>
-        <a href="/how-we-do-it.html" class="text-white hover:text-primary transition-colors duration-300">איך אנחנו עושים את זה</a>
-        <a href="#blog" class="text-white hover:text-primary transition-colors duration-300">בלוג</a>
-        <a href="#" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap hover:bg-white hover:text-[#FF0000] transition-colors duration-300"
-           onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';">
-          בואו נתחיל
-        </a>
+      <!-- תפריט דסקטופ עם שפות -->
+      <div class="hidden md:flex items-center space-x-8 w-full">
+        <div class="flex space-x-8">
+          <a href="/what-we-do.html" class="text-white hover:text-primary transition-colors duration-300">מה אנחנו עושים</a>
+          <a href="/how-we-do-it.html" class="text-white hover:text-primary transition-colors duration-300">איך אנחנו עושים את זה</a>
+          <a href="#blog" class="text-white hover:text-primary transition-colors duration-300">בלוג</a>
+          <a href="#" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap hover:bg-white hover:text-[#FF0000] transition-colors duration-300"
+             onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';">
+            בואו נתחיל
+          </a>
+        </div>
 
         <!-- שפות מימין -->
-        <div class="flex items-center space-x-4 ml-6">
+        <div class="flex items-center space-x-4 ml-auto">
           <a href="index-es.html" class="text-white hover:text-primary transition-colors duration-300">ES</a>
           <a href="index-il.html" class="text-white hover:text-primary transition-colors duration-300">IL</a>
           <a href="index-ja.html" class="text-white hover:text-primary transition-colors duration-300">JP</a>
