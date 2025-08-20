@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO MET</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+}
+.step-connector {
+position: absolute;
+top: 50%;
+left: 100%;
+width: 100%;
+height: 2px;
+background: linear-gradient(90deg, #FF0000 0%, #FF0000 70%, transparent 100%);
+transform: translateY(-50%);
+z-index: -1;
+}
+.step-number {
+background: linear-gradient(135deg, #FF0000, #CC0000);
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #ccc;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #FF0000;
+border-color: #FF0000;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+top: 2px;
+left: 6px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.tool-card {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tool-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.custom-button {
+transition: all 0.3s ease;
+}
+.custom-button:hover {
+transform: translateY(-2px);
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+</style>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#FF0000',
+secondary: '#000000'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+</head>
+<body class="bg-white">
+<!-- Navegación -->
+
+<nav class="fixed w-full z-50 transition-all duration-300" id="mainNav">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <div class="flex items-center">
+        <a href="/">
+          <img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/28f95b224462cb1a70de312f51c49b10.png" alt="Logo" class="h-8">
+        </a>
+      </div>
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="/what-we-do.html" class="text-white hover:text-primary transition-colors duration-300">私たちのサービス</a>
+        <a href="/how-we-do-it.html" class="text-white hover:text-primary transition-colors duration-300">成功へのアプローチ</a>
+        <a href="#blog" class="text-white hover:text-primary transition-colors duration-300">ブログ</a>
+        <a href="#" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap hover:bg-white hover:text-[#FF0000] transition-colors duration-300"
+           onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';">
+          今すぐ始める
+        </a>
+      </div>
+      <div class="md:hidden flex items-center">
+        <button class="text-white">
+          <div class="w-8 h-8 flex items-center justify-center">
+            <i class="ri-menu-line ri-2x"></i>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="relative pt-20 pb-24 min-h-[105vh] flex items-center" style="background-image: url('https://readdy.ai/api/search-image?query=professional%2520digital%2520marketing%2520team%2520working%2520on%2520SEO%2520strategy%2520in%2520modern%2520office%2520with%2520data%2520visualizations%2520on%2520screens%252C%2520soft%2520lighting%252C%2520dark%2520overlay%252C%2520professional%2520atmosphere%252C%2520global%2520marketing%2520concept%252C%2520high%2520quality%2520professional%2520photo&width=1920&height=1080&seq=12345&orientation=landscape'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-black bg-opacity-70"></div>
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="max-w-3xl">
+<h1 class="text-5xl sm:text-6xl font-bold text-white mb-6">グローバルデジタル成功のためのメソッド</h1>
+<p class="text-xl text-white/90 mb-8">計測可能で拡張可能な成長を実現する、多言語SEO / SEMのオーダーメイド戦略で国際市場へのリーチを一気に拡大します。</p>
+<p class="text-lg text-white/80 mb-10">実証済みのフレームワークで、市場インサイト・精緻な戦略・隙のない実行を融合。新規市場を切り開き、多様なオーディエンスとつながり、ブランドを“世界基準”へ引き上げます。</p>
+<a href="#" class="inline-block bg-primary text-white px-8 py-4 !rounded-button font-medium custom-button whitespace-nowrap hover:bg-white hover:text-[#FF0000] transition-colors duration-300" onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';">今すぐ始める</a>
+</div>
+</div>
+</section>
+<!-- Methodology Steps Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">成果を生む4ステップ・フレームワーク</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">多言語SEO / SEMのグローバルインパクトを最大化するために緻密に設計されたプロセスです。</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 relative">
+<!-- Step 1 -->
+<div class="bg-white p-8 !rounded-lg shadow-lg border border-gray-100 relative">
+<div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 flex items-center justify-center step-number text-white !rounded-full font-bold text-xl">1</div>
+<div class="hidden lg:block step-connector"></div>
+<h3 class="text-2xl font-bold text-gray-900 mt-4 mb-4 text-center">リサーチ</h3>
+<p class="text-gray-600 mb-4">ターゲット市場・競合・多言語キーワード機会を徹底分析し、勝てる土台を構築します。</p>
+<ul class="space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">国際市場インサイトの徹底収集</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">先進的な多言語キーワードマッピング</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">グローバル競合環境分析</span>
+</li>
+</ul>
+</div>
+<!-- Step 2 -->
+<div class="bg-white p-8 !rounded-lg shadow-lg border border-gray-100 relative">
+<div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 flex items-center justify-center step-number text-white !rounded-full font-bold text-xl">2</div>
+<div class="hidden lg:block step-connector"></div>
+<h3 class="text-2xl font-bold text-gray-900 mt-4 mb-4 text-center">戦略設計</h3>
+<p class="text-gray-600 mb-4">市場特性に最適化したSEO・SEM・ローカライズ戦略をひとつのロードマップで有機的に統合します。</p>
+<ul class="space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">多言語サイトの情報設計</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">コンテンツ現地化の戦略立案</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">SEMの戦略的予算設計と配分</span>
+</li>
+</ul>
+</div>
+<!-- Step 3 -->
+<div class="bg-white p-8 !rounded-lg shadow-lg border border-gray-100 relative">
+<div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 flex items-center justify-center step-number text-white !rounded-full font-bold text-xl">3</div>
+<div class="hidden lg:block step-connector"></div>
+<h3 class="text-2xl font-bold text-gray-900 mt-4 mb-4 text-center">実行</h3>
+<p class="text-gray-600 mb-4">各施策を高精度で実装し、すべての市場で最大パフォーマンスを発揮します。</p>
+<ul class="space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">多言語にわたるテクニカルSEO最適化</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">成果に直結するローカライズドコンテンツ制作</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">国別SEMキャンペーンの展開</span>
+</li>
+</ul>
+</div>
+<!-- Step 4 -->
+<div class="bg-white p-8 !rounded-lg shadow-lg border border-gray-100 relative">
+<div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 flex items-center justify-center step-number text-white !rounded-full font-bold text-xl">4</div>
+<h3 class="text-2xl font-bold text-gray-900 mt-4 mb-4 text-center">最適化</h3>
+<p class="text-gray-600 mb-4">成果を最大化するため、継続的に分析・改善を行い、ROIと成長を両立します。</p>
+<ul class="space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">市場別パフォーマンスの精緻なモニタリング</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">データドリブンな戦略改善</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">詳細レポートと経営層への提言</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Details Section -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">グローバルで成果を出すための精密メソッド</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">多言語SEO・SEM・ローカライズドコンテンツを一体化し、国際市場での存在感を高めるために設計された、緻密で実践的な手法です。</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Research & Analysis -->
+<div class="bg-white p-8 !rounded-lg shadow-lg border border-gray-100">
+<div class="w-16 h-16 flex items-center justify-center bg-red-50 !rounded-full mb-6 mx-auto">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-search-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">インサイト起点の市場調査</h3>
+<p class="text-gray-600 mb-6">すべてのプロジェクトは、ターゲット地域の深い理解から始まります。結果を動かす“違い”を明らかにします。</p>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">カスタマイズされた市場インテリジェンス</h4>
+<p class="text-gray-600 text-sm">地域トレンド、デジタル行動、オーディエンス期待値を徹底分析。</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">戦略的な競合インサイト</h4>
+<p class="text-gray-600 text-sm">競合状況を可視化し、最適なポジショニング機会を特定。</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">テクニカルSEO評価</h4>
+<p class="text-gray-600 text-sm">国境を越えて通用する技術的優位とサイト性能を包括診断。</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Strategy Development -->
+<div class="bg-white p-8 !rounded-lg shadow-lg border border-gray-100">
+<div class="w-16 h-16 flex items-center justify-center bg-red-50 !rounded-full mb-6 mx-auto">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-strategy-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">文化文脈に強い多言語戦略</h3>
+<p class="text-gray-600 mb-6">単なる翻訳を超えて、各市場で“響く”構造とメッセージを設計し、確かな成果へ。</p>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">最適化された多言語アーキテクチャ</h4>
+<p class="text-gray-600 text-sm">スケールを前提に、あらゆる言語で可視性・性能・明瞭性を担保。</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">ローカライズド・コンテンツ計画</h4>
+<p class="text-gray-600 text-sm">各オーディエンスの文化・トーン・検索意図に沿ったメッセージ設計。</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">グローバルリンク獲得</h4>
+<p class="text-gray-600 text-sm">主要地域の権威メディアから高品質な被リンクを獲得。</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Implementation & Optimization -->
+<div class="bg-white p-8 !rounded-lg shadow-lg border border-gray-100">
+<div class="w-16 h-16 flex items-center justify-center bg-red-50 !rounded-full mb-6 mx-auto">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-settings-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">精密な実行、意図ある最適化</h3>
+<p class="text-gray-600 mb-6">実装はシームレスに。すべての要素を計測し、ターゲット市場全体で継続的に改善します。</p>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">グローバル検索向けSEO強化</h4>
+<p class="text-gray-600 text-sm">国際検索エンジンに合わせた高パフォーマンス改善。</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">多言語SEMキャンペーン運用</h4>
+<p class="text-gray-600 text-sm">現地の検索行動・購買意図に沿う広告を戦略的に運用。</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">データ起点の最適化</h4>
+<p class="text-gray-600 text-sm">指標に基づく継続改善で、長期成長とROIを最大化。</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Tools & Technologies Section -->
+<section class="py-20 bg-black">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-white mb-4">先進ツールを、成果に最適化して活用</h2>
+<p class="text-xl text-white/80 max-w-3xl mx-auto">多言語SEO・SEM・コンテンツマーケティングを高度化するために、厳選した最新テクノロジー群を戦略的に導入します。</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+<div class="text-center">
+<div class="w-16 h-16 mx-auto mb-6 text-[#FF0000]">
+<i class="ri-line-chart-line ri-3x"></i>
+</div>
+<h3 class="text-3xl font-bold text-white mb-4">SEO</h3>
+<p class="text-white/80">革新的なプラットフォームで、世界市場での検索最適化を洗練。</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 mx-auto mb-6 text-[#FF0000]">
+<i class="ri-funds-line ri-3x"></i>
+</div>
+<h3 class="text-3xl font-bold text-white mb-4">SEM</h3>
+<p class="text-white/80">プレミアムなソリューションで、国際ペイドメディアの成果を最大化。</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 mx-auto mb-6 text-[#FF0000]">
+<i class="ri-article-line ri-3x"></i>
+</div>
+<h3 class="text-3xl font-bold text-white mb-4">コンテンツ</h3>
+<p class="text-white/80">文化に響く魅力的なコンテンツを、精度高く設計・制作します。</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<!-- Results & Metrics Section -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">成果と主要指標</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">体系化されたメソッドにより、多様な国際市場で一貫した測定可能な成果を実現します。</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+<!-- Statistics -->
+<div>
+<h3 class="text-2xl font-bold text-gray-900 mb-8">主要KPI</h3>
+<div class="grid grid-cols-2 gap-6">
+<div class="bg-white p-6 !rounded-lg shadow-lg border border-gray-100 text-center">
+<div class="text-4xl font-bold text-primary mb-2">+156%</div>
+<p class="text-gray-700">国際オーガニック流入の平均増加率</p>
+</div>
+<div class="bg-white p-6 !rounded-lg shadow-lg border border-gray-100 text-center">
+<div class="text-4xl font-bold text-primary mb-2">+83%</div>
+<p class="text-gray-700">多言語SEMキャンペーンのCVR改善</p>
+</div>
+<div class="bg-white p-6 !rounded-lg shadow-lg border border-gray-100 text-center">
+<div class="text-4xl font-bold text-primary mb-2">-42%</div>
+<p class="text-gray-700">国際CPA（獲得単価）の削減</p>
+</div>
+<div class="bg-white p-6 !rounded-lg shadow-lg border border-gray-100 text-center">
+<div class="text-4xl font-bold text-primary mb-2">+94%</div>
+<p class="text-gray-700">ターゲット市場でのブランド可視性向上</p>
+</div>
+</div>
+</div>
+<!-- Chart -->
+<div class="bg-white p-6 !rounded-lg shadow-lg border border-gray-100">
+<h3 class="text-2xl font-bold text-gray-900 mb-6">市場別オーガニック成長</h3>
+<div id="growthChart" class="w-full h-80"></div>
+</div>
+</div>
+<!-- Case Studies & Testimonials -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<!-- Case Studies -->
+<div>
+<h3 class="text-2xl font-bold text-gray-900 mb-6">成功事例</h3>
+<div class="space-y-6">
+<div class="bg-white p-6 !rounded-lg shadow-lg border border-gray-100">
+<div class="flex items-center mb-4">
+<img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/507e3563646fb04ee3125683e63b0023.png" alt="Mia Cosmetic Store" class="w-10 h-10 object-cover !rounded-full mr-4">
+<h4 class="text-xl font-bold">Mia Cosmetic Store</h4>
+</div>
+<p class="text-gray-600 mb-4">国際展開を目指すコロンビア発のフレグランスブランドに対し、多言語SEOを実装。10か月でオーガニック流入は198%増、スペイン語圏でのCVRを162%改善しました。</p>
+<div class="flex justify-between text-sm">
+<span class="text-gray-500">期間：8か月</span>
+</div>
+</div>
+<div class="bg-white p-6 !rounded-lg shadow-lg border border-gray-100">
+<div class="flex items-center mb-4">
+<img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/01cdabd3b2d2f19fb42ae8f04a2dcc6e.png" alt="ARI Production" class="w-10 h-10 object-cover !rounded-full mr-4">
+<h4 class="text-xl font-bold">ARI Production</h4>
+</div>
+<p class="text-gray-600 mb-4">日本拠点の制作会社向けに、英語・スペイン語・日本語でSEMを運用。獲得単価を48%削減し、ラテンアメリカと欧州からの有効リードを2倍に拡大しました。</p>
+<div class="flex justify-between text-sm">
+<span class="text-gray-500">期間：12か月</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Testimonials -->
+<div>
+<h3 class="text-2xl font-bold text-gray-900 mb-6">お客様の声</h3>
+<div class="space-y-6">
+<div class="bg-white p-6 !rounded-lg shadow-lg border border-gray-100">
+<div class="flex mb-4">
+<div class="text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 italic mb-4">「期待以上の成果でした。多言語SEOへの緻密な取り組みにより、コロンビア・メキシコ市場でブランドらしさを保ちながら拡大できました。」</p>
+<div class="flex items-center">
+<img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/507e3563646fb04ee3125683e63b0023.png" alt="Nina Zehavit" class="w-12 h-12 object-cover !rounded-full mr-4">
+<div>
+<h5 class="font-bold">Nina Zehavit</h5>
+<p class="text-sm text-gray-500">デジタルマーケティングマネージャー（Mia Cosmetic Store）</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 !rounded-lg shadow-lg border border-gray-100">
+<div class="flex mb-4">
+<div class="text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 italic mb-4">「ビジネス目標を、測定可能なグローバル戦略へ落とし込む力が素晴らしい。日本国外での存在感が着実に伸びています。」</p>
+<div class="flex items-center">
+<img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/624dded52d7b80091f70eef07b1f1ac0.png" alt="Kazuya Tanaka" class="w-12 h-12 object-cover !rounded-full mr-4">
+<div>
+<h5 class="font-bold">Kazuya Tanaka</h5>
+<p class="text-sm text-gray-500">国際事業ディレクター（ARI Production）</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-16 bg-black text-white">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="text-3xl sm:text-4xl font-bold mb-6">グローバルなデジタルプレゼンスを強化しませんか？</h2>
+<p class="text-xl mb-8">無料の戦略セッションを予約して、このメソッドで国際市場におけるビジネス成長を加速しましょう。</p>
+<div class="bg-white/10 p-8 !rounded-lg mb-8">
+<form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium mb-2" for="name">お名前（フルネーム）</label>
+<input type="text" id="name" name="name" class="w-full px-4 py-2 !rounded bg-white/5 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+</div>
+<div>
+<label class="block text-sm font-medium mb-2" for="email">メールアドレス</label>
+<input type="email" id="email" name="email" class="w-full px-4 py-2 !rounded bg-white/5 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+</div>
+<div>
+<label class="block text-sm font-medium mb-2" for="company">会社名</label>
+<input type="text" id="company" name="company" class="w-full px-4 py-2 !rounded bg-white/5 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+</div>
+<div>
+<label class="block text-sm font-medium mb-2" for="website">ウェブサイト</label>
+<input type="url" id="website" name="website" class="w-full px-4 py-2 !rounded bg-white/5 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+</div>
+<div class="md:col-span-2">
+<label class="block text-sm font-medium mb-2" for="markets">関心のある市場</label>
+<div class="grid grid-cols-2 sm:grid-cols-2 gap-3">
+<div class="flex items-center">
+<input type="checkbox" id="japan" name="markets[]" value="japan" class="custom-checkbox">
+<label for="japan" class="ml-2">日本</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="unitedstates" name="markets[]" value="unitedstates" class="custom-checkbox">
+<label for="unitedstates" class="ml-2">アメリカ合衆国</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="latinamerica" name="markets[]" value="latinamerica" class="custom-checkbox">
+<label for="latinamerica" class="ml-2">中南米</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="israel" name="markets[]" value="israel" class="custom-checkbox">
+<label for="israel" class="ml-2">イスラエル</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="europe" name="markets[]" value="europe" class="custom-checkbox">
+<label for="europe" class="ml-2">欧州</label>
+</div>
+</div>
+</div>
+<div class="md:col-span-2">
+<button type="submit" class="bg-primary text-white px-8 py-3 !rounded-button font-medium custom-button whitespace-nowrap hover:bg-white hover:text-[#FF0000] transition-colors duration-300 w-full md:w-auto">戦略セッションを予約</button>
+</div>
+</form>
+</div>
+<p class="text-white/70">直接のご連絡はこちら：</p>
+<div class="flex flex-wrap justify-center gap-4 mt-4">
+<a href="mailto:marco@seo-met.com" class="flex items-center text-white hover:text-primary transition-colors duration-300">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-mail-line"></i>
+</div>
+marco@seo-met.com
+</a>
+<a href="tel:+18018355927" class="flex items-center text-white hover:text-primary transition-colors duration-300">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-phone-line"></i>
+</div>
++1 801 835 5927
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-black text-white py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col items-center text-center">
+<a href="https://readdy.ai/home/945b20ac-6c79-4c61-b26b-8c2a240c5356/428391aa-3aa7-469d-813f-55d0b7136246" data-readdy="true"><img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/28f95b224462cb1a70de312f51c49b10.png" alt="Logo" class="h-8"></a>
+<p class="mt-6 max-w-md mx-auto text-white/70">パーソナライズされた戦略と測定可能な成果で、デジタルプレゼンスを変革します。</p>
+<div class="mt-8 flex items-center space-x-4">
+<a href="mailto:marco@seo-met.com" class="flex items-center text-white/70 hover:text-primary transition-colors duration-300">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-mail-line"></i>
+</div>
+marco@seo-met.com
+</a>
+<span class="text-white/30">|</span>
+<a href="tel:+18018355927" class="flex items-center text-white/70 hover:text-primary transition-colors duration-300">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-phone-line"></i>
+</div>
++1 801 835 5927
+</a>
+</div>
+<div class="mt-8 flex space-x-6">
+<a href="https://www.linkedin.com/in/marco-trejo-21249b359" data-readdy="true" class="text-white/70 hover:text-primary transition-colors duration-300">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-linkedin-fill ri-lg"></i>
+</div>
+</a>
+</div>
+<div class="mt-8 pt-8 border-t border-white/10 w-full flex flex-col md:flex-row justify-between items-center">
+<p class="text-white/50">© 2025 DigitalNexo. 全著作権所有。</p>
+<div class="mt-4 md:mt-0 flex space-x-6">
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- Modal de consulta -->
+<div id="consultationModal" class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 hidden">
+<div class="bg-white p-8 !rounded-lg max-w-xl w-full mx-4 relative max-h-[90vh] overflow-y-auto">
+<button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-close-line ri-2x"></i>
+</div>
+</button>
+<h2 class="text-2xl font-bold mb-6">無料相談を予約する</h2>
+<form id="consultationForm" class="space-y-6">
+<div class="space-y-4">
+<div class="flex flex-col gap-3">
+<label class="text-lg font-medium text-gray-900">どのようにサポートできますか？</label>
+<div class="flex items-center">
+<input type="radio" id="seo" name="inquiry" value="seo" class="hidden peer" required>
+<label for="seo" class="w-full px-4 py-3 border !rounded-lg peer-checked:border-primary peer-checked:bg-red-50 hover:border-primary flex items-center gap-3 cursor-pointer">
+<div class="w-5 h-5 flex items-center justify-center text-primary">
+<i class="ri-line-chart-line"></i>
+</div>
+SEOを強化したい
+</label>
+</div>
+<div class="flex items-center">
+<input type="radio" id="multilingual" name="inquiry" value="multilingual" class="hidden peer">
+<label for="multilingual" class="w-full px-4 py-3 border !rounded-lg peer-checked:border-primary peer-checked:bg-red-50 hover:border-primary flex items-center gap-3 cursor-pointer">
+<div class="w-5 h-5 flex items-center justify-center text-primary">
+<i class="ri-global-line"></i>
+</div>
+多言語キャンペーン
+</label>
+</div>
+<div class="flex items-center">
+<input type="radio" id="plans" name="inquiry" value="plans" class="hidden peer">
+<label for="plans" class="w-full px-4 py-3 border !rounded-lg peer-checked:border-primary peer-checked:bg-red-50 hover:border-primary flex items-center gap-3 cursor-pointer">
+<div class="w-5 h-5 flex items-center justify-center text-primary">
+<i class="ri-question-line"></i>
+</div>
+プランについて相談したい
+</label>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2" for="name">お名前</label>
+<input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 !rounded text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary" required>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2" for="email">メール</label>
+<input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 !rounded text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary" required>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2" for="message">お問い合わせ内容</label>
+<textarea id="message" name="message" rows="3" class="w-full px-4 py-2 border border-gray-300 !rounded text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">日付を選択</label>
+<div id="calendar" class="grid grid-cols-7 gap-1">
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">時間を選択（GMT-6）</label>
+<div id="timeSlots" class="grid grid-cols-3 sm:grid-cols-4 gap-2">
+</div>
+</div>
+<input type="hidden" id="selectedDate" name="date">
+<input type="hidden" id="selectedTime" name="time">
+</div>
+<div class="mt-6">
+<button type="submit" class="w-full bg-primary text-white px-8 py-3 !rounded-lg font-medium hover:bg-opacity-90 transition-colors duration-300">相談を予約する</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Botón de regreso arriba -->
+<button id="backToTop" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 !rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-arrow-up-line ri-lg"></i>
+</div>
+</button>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const mainNav = document.getElementById('mainNav');
+const backToTopButton = document.getElementById('backToTop');
+// Growth Chart
+const growthChart = echarts.init(document.getElementById('growthChart'));
+const growthOption = {
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+data: ['メキシコ', 'コロンビア', 'アメリカ合衆国', '日本'],
+textStyle: {
+color: '#1f2937'
+}
+},
+grid: {
+left: '3%',
+right: '4%',
+bottom: '3%',
+containLabel: true
+},
+xAxis: {
+type: 'category',
+boundaryGap: false,
+data: ['1か月目', '2か月目', '3か月目', '4か月目', '5か月目', '6か月目'],
+axisLine: {
+lineStyle: {
+color: '#1f2937'
+}
+}
+},
+yAxis: {
+type: 'value',
+axisLine: {
+lineStyle: {
+color: '#1f2937'
+}
+}
+},
+series: [
+{
+name: 'メキシコ',
+type: 'line',
+smooth: true,
+lineStyle: {
+width: 3,
+color: 'rgba(87, 181, 231, 1)'
+},
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(87, 181, 231, 0.2)'
+}, {
+offset: 1, color: 'rgba(87, 181, 231, 0.05)'
+}]
+}
+},
+data: [30, 45, 70, 95, 120, 160]
+},
+{
+name: 'コロンビア',
+type: 'line',
+smooth: true,
+lineStyle: {
+width: 3,
+color: 'rgba(141, 211, 199, 1)'
+},
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(141, 211, 199, 0.2)'
+}, {
+offset: 1, color: 'rgba(141, 211, 199, 0.05)'
+}]
+}
+},
+data: [20, 35, 55, 80, 110, 135]
+},
+{
+name: 'アメリカ合衆国',
+type: 'line',
+smooth: true,
+lineStyle: {
+width: 3,
+color: 'rgba(251, 191, 114, 1)'
+},
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(251, 191, 114, 0.2)'
+}, {
+offset: 1, color: 'rgba(251, 191, 114, 0.05)'
+}]
+}
+},
+data: [40, 65, 85, 105, 130, 170]
+},
+{
+name: '日本',
+type: 'line',
+smooth: true,
+lineStyle: {
+width: 3,
+color: 'rgba(252, 141, 98, 1)'
+},
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(252, 141, 98, 0.2)'
+}, {
+offset: 1, color: 'rgba(252, 141, 98, 0.05)'
+}]
+}
+},
+data: [15, 30, 50, 75, 95, 125]
+}
+]
+};
+growthChart.setOption(growthOption);
+// Resize chart on window resize
+window.addEventListener('resize', function() {
+growthChart.resize();
+});
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+if (this.getAttribute('href') !== '#' && !this.hasAttribute('onclick')) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+const headerOffset = 100;
+const elementPosition = targetElement.getBoundingClientRect().top;
+const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+window.scrollTo({
+top: offsetPosition,
+behavior: 'smooth'
+});
+}
+}
+});
+});
+// Modal functionality
+const modal = document.getElementById('consultationModal');
+const closeModalButton = document.getElementById('closeModal');
+const consultationForm = document.getElementById('consultationForm');
+const dateInput = document.getElementById('date');
+const timeSelect = document.getElementById('time');
+closeModalButton.addEventListener('click', function() {
+modal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+});
+modal.addEventListener('click', function(e) {
+if (e.target === modal) {
+modal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+});
+// Calendar and time slot functionality
+function generateCalendar() {
+const calendar = document.getElementById('calendar');
+const today = new Date();
+const currentMonth = today.getMonth();
+const currentYear = today.getFullYear();
+const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
+// Clear previous calendar
+calendar.innerHTML = '';
+// Add day headers
+const days = ['日', '月', '火', '水', '木', '金', '土'];
+days.forEach(day => {
+const dayHeader = document.createElement('div');
+dayHeader.className = 'text-center text-sm font-medium text-gray-700';
+dayHeader.textContent = day;
+calendar.appendChild(dayHeader);
+});
+// Add empty cells for days before the first day of the month
+for (let i = 0; i < firstDayOfMonth; i++) {
+const emptyDay = document.createElement('div');
+calendar.appendChild(emptyDay);
+}
+// Add calendar days
+for (let day = 1; day <= daysInMonth; day++) {
+const date = new Date(currentYear, currentMonth, day);
+const dayButton = document.createElement('button');
+dayButton.type = 'button';
+dayButton.className = 'p-2 text-center !rounded hover:bg-red-50 focus:outline-none transition-colors';
+dayButton.textContent = day;
+// Disable past dates and weekends
+const isPastDate = date < new Date().setHours(0, 0, 0, 0);
+const isWeekend = date.getDay() === 0 || date.getDay() === 6;
+if (isPastDate || isWeekend) {
+dayButton.disabled = true;
+dayButton.className += ' opacity-50 cursor-not-allowed';
+} else {
+dayButton.addEventListener('click', () => selectDate(date));
+}
+calendar.appendChild(dayButton);
+}
+}
+function generateTimeSlots() {
+const timeSlots = document.getElementById('timeSlots');
+timeSlots.innerHTML = '';
+const times = [];
+for (let hour = 7; hour <= 18; hour++) {
+times.push(`${hour.toString().padStart(2, '0')}:00`);
+}
+times.forEach(time => {
+const timeButton = document.createElement('button');
+timeButton.type = 'button';
+timeButton.className = 'p-2 border !rounded text-center hover:border-primary hover:bg-red-50 focus:outline-none transition-colors';
+timeButton.textContent = time;
+timeButton.addEventListener('click', () => selectTime(time));
+timeSlots.appendChild(timeButton);
+});
+}
+function selectDate(date) {
+document.querySelectorAll('#calendar button').forEach(btn => {
+btn.classList.remove('bg-red-50', 'border-primary');
+});
+event.target.classList.add('bg-red-50', 'border-primary');
+document.getElementById('selectedDate').value = date.toISOString().split('T')[0];
+generateTimeSlots();
+}
+function selectTime(time) {
+document.querySelectorAll('#timeSlots button').forEach(btn => {
+btn.classList.remove('bg-red-50', 'border-primary');
+});
+event.target.classList.add('bg-red-50', 'border-primary');
+document.getElementById('selectedTime').value = time;
+}
+// Initialize calendar and time slots
+generateCalendar();
+// Form submission
+consultationForm.addEventListener('submit', function(e) {
+e.preventDefault();
+const formData = new FormData(consultationForm);
+const data = Object.fromEntries(formData);
+const confirmationModal = document.createElement('div');
+confirmationModal.className = 'fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50';
+confirmationModal.innerHTML = `
+<div class="bg-white p-8 !rounded-lg max-w-md w-full mx-4">
+<h3 class="text-2xl font-bold mb-4 text-black">ご予約が完了しました</h3>
+<p class="text-gray-700 mb-6">ご予約ありがとうございます。ビデオ通話の詳細を記載した確認メールをお送りします。</p>
+<button class="bg-primary text-white px-6 py-2 !rounded-button">閉じる</button>
+</div>
+`;
+document.body.appendChild(confirmationModal);
+modal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+confirmationModal.querySelector('button').addEventListener('click', function() {
+confirmationModal.remove();
+consultationForm.reset();
+});
+});
+// Navigation and back to top button behavior
+mainNav.addEventListener('mouseenter', function() {
+mainNav.classList.add('bg-black', 'bg-opacity-80', 'backdrop-blur-sm');
+});
+mainNav.addEventListener('mouseleave', function() {
+if (window.scrollY <= 100) {
+mainNav.classList.remove('bg-black', 'bg-opacity-80', 'backdrop-blur-sm');
+}
+});
+window.addEventListener('scroll', function() {
+if (window.scrollY > 100) {
+mainNav.classList.add('bg-black', 'bg-opacity-80', 'backdrop-blur-sm');
+} else if (!mainNav.matches(':hover')) {
+mainNav.classList.remove('bg-black', 'bg-opacity-80', 'backdrop-blur-sm');
+}
+if (window.scrollY > 300) {
+backToTopButton.classList.remove('opacity-0', 'invisible');
+backToTopButton.classList.add('opacity-100', 'visible');
+} else {
+backToTopButton.classList.remove('opacity-100', 'visible');
+backToTopButton.classList.add('opacity-0', 'invisible');
+}
+});
+backToTopButton.addEventListener('click', function() {
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+});
+});
+</script>
+</body>
+</html>
