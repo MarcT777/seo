@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO MET</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+}
+.service-card {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.custom-button {
+transition: all 0.3s ease;
+}
+.custom-button:hover {
+transform: translateY(-2px);
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.feature-icon {
+transition: all 0.3s ease;
+}
+.feature-card:hover .feature-icon {
+transform: scale(1.1);
+}
+.feature-card {
+transition: all 0.3s ease;
+}
+.feature-card:hover {
+transform: translateY(-5px);
+}
+.process-item {
+position: relative;
+}
+.process-item:not(:last-child)::after {
+content: '';
+position: absolute;
+top: 2.5rem;
+right: -1rem;
+width: 2rem;
+height: 2px;
+background-color: #FF0000;
+}
+@media (max-width: 768px) {
+.process-item:not(:last-child)::after {
+display: none;
+}
+}
+</style>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#FF0000',
+secondary: '#000000'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+</head>
+<body class="bg-white">
+<!-- Navegación -->
+
+<nav class="fixed w-full z-50 transition-all duration-300" id="mainNav">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <div class="flex items-center">
+        <a href="/">
+          <img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/28f95b224462cb1a70de312f51c49b10.png" alt="Logo" class="h-8">
+        </a>
+      </div>
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="/what-we-do.html" class="text-white hover:text-primary transition-colors duration-300">私たちのサービス</a>
+        <a href="/how-we-do-it.html" class="text-white hover:text-primary transition-colors duration-300">成功へのアプローチ</a>
+        <a href="#blog" class="text-white hover:text-primary transition-colors duration-300">ブログ</a>
+        <a href="#" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap hover:bg-white hover:text-[#FF0000] transition-colors duration-300"
+           onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';">
+          今すぐ始める
+        </a>
+      </div>
+      <div class="md:hidden flex items-center">
+        <button class="text-white">
+          <div class="w-8 h-8 flex items-center justify-center">
+            <i class="ri-menu-line ri-2x"></i>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="relative bg-black text-white py-[9.36rem] overflow-hidden" id="services">
+<div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://readdy.ai/api/search-image?query=professional%20digital%20marketing%20team%20working%20on%20SEO%20and%20SEM%20strategies%20in%20a%20modern%20office%20with%20multiple%20screens%20showing%20analytics%20and%20search%20engine%20results%2C%20dark%20atmosphere%20with%20blue%20accent%20lighting%2C%20high-end%20corporate%20environment&width=1920&height=1080&seq=1&orientation=landscape');"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<h1 class="text-5xl sm:text-6xl md:text-7xl font-bold mb-8 leading-tight max-w-4xl mt-[30px]">ブランドを世界へ。グローバル市場と“本物のつながり”で結びます。</h1>
+<p class="text-xl mb-10 text-gray-300 max-w-2xl">データドリブンのSEO・SEMで国際的な存在感を強化。御社のブランドが世界で「見つかり」「選ばれる」仕組みをつくります。</p>
+<a href="#" class="inline-block bg-primary text-white px-10 py-5 !rounded-button text-lg font-medium custom-button whitespace-nowrap hover:bg-white hover:text-[#FF0000] transition-colors duration-300" onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';">今すぐ始める</a>
+</div>
+</section>
+<!-- Servicios Principales -->
+<section class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl sm:text-4xl font-bold text-black">私たちは、ブランドと世界中のオーディエンスを結ぶ「デジタルの架け橋」を構築し、多言語・多市場で成功するための3つの核心課題を解決します。</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Tarjeta 1 -->
+<div class="bg-[#0A3A5A] p-8 !rounded-lg text-white service-card">
+<div class="w-16 h-16 flex items-center justify-center bg-white/10 !rounded-full mb-6">
+<i class="ri-focus-3-line ri-2x text-white"></i>
+</div>
+<h3 class="text-2xl font-bold mb-4">各市場で“理想の顧客”とつながるには？</h3>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-1 mr-2">
+<i class="ri-check-line text-white"></i>
+</div>
+<span>文化に最適化したターゲット・ブランディングで、本当に重要な場所での可視性を高めます。</span>
+</li>
+</ul>
+<div class="flex justify-between items-center mt-auto">
+<span class="text-lg font-medium">新しい市場機会を発見</span>
+<div class="w-10 h-10 flex items-center justify-center cursor-pointer bg-white/10 !rounded-full hover:bg-white/20 transition-colors duration-300" onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';">
+<i class="ri-arrow-right-line"></i>
+</div>
+</div>
+</div>
+<!-- Tarjeta 2 -->
+<div class="bg-primary p-8 !rounded-lg text-white service-card">
+<div class="w-16 h-16 flex items-center justify-center bg-white/10 !rounded-full mb-6">
+<i class="ri-line-chart-line ri-2x text-white"></i>
+</div>
+<h3 class="text-2xl font-bold mb-4">国際的に検索エンジンで上位表示するには？</h3>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-1 mr-2">
+<i class="ri-check-line text-white"></i>
+</div>
+<span>多言語SEOと戦略的SEMで、あらゆる言語・地域の検索結果を攻略します。</span>
+</li>
+</ul>
+<div class="flex justify-between items-center mt-auto">
+<span class="text-lg font-medium">オンライン存在感を一段上へ</span>
+<div class="w-10 h-10 flex items-center justify-center cursor-pointer bg-white/10 !rounded-full hover:bg-white/20 transition-colors duration-300" onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';">
+<i class="ri-arrow-right-line"></i>
+</div>
+</div>
+</div>
+<!-- Tarjeta 3 -->
+<div class="bg-[#00594F] p-8 !rounded-lg text-white service-card">
+<div class="w-16 h-16 flex items-center justify-center bg-white/10 !rounded-full mb-6">
+<i class="ri-rocket-line ri-2x text-white"></i>
+</div>
+<h3 class="text-2xl font-bold mb-4">グローバルなトラフィックを継続的な成長に変えるには？</h3>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-1 mr-2">
+<i class="ri-check-line text-white"></i>
+</div>
+<span>高度な分析とコンバージョン設計で、世界の訪問者を“顧客”へと転換します。</span>
+</li>
+</ul>
+<div class="flex justify-between items-center mt-auto">
+<span class="text-lg font-medium">アクセスを確かな成果へ</span>
+<div class="w-10 h-10 flex items-center justify-center cursor-pointer bg-white/10 !rounded-full hover:bg-white/20 transition-colors duration-300" onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';">
+<i class="ri-arrow-right-line"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Características Detalladas -->
+<section class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl sm:text-4xl font-bold text-black">本当の成長を生むグローバルSEO・SEMソリューション</h2>
+<p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">国際戦略でブランドの潜在力を解放し、到達・可視性・エンゲージメントを持続的な成功へとつなげます。</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Feature 1 -->
+<div class="bg-white p-8 !rounded-lg shadow-sm feature-card">
+<div class="w-14 h-14 flex items-center justify-center bg-blue-50 !rounded-full mb-6 feature-icon">
+<i class="ri-search-line ri-xl text-[#0A3A5A]"></i>
+</div>
+<h3 class="text-xl font-bold mb-4 text-black">国際SEO診断</h3>
+<p class="text-gray-600">キーワード戦略、技術最適化、グローバルに強いサイト構造まで徹底分析。隠れた機会を見つけ出します。</p>
+</div>
+<!-- Feature 2 -->
+<div class="bg-white p-8 !rounded-lg shadow-sm feature-card">
+<div class="w-14 h-14 flex items-center justify-center bg-red-50 !rounded-full mb-6 feature-icon">
+<i class="ri-global-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-4 text-black">コンテンツ現地化</h3>
+<p class="text-gray-600">市場の言語で語りかけ、共感を獲得。SEO効果を損なわず、各地域で“刺さる”表現に最適化します。</p>
+</div>
+<!-- Feature 3 -->
+<div class="bg-white p-8 !rounded-lg shadow-sm feature-card">
+<div class="w-14 h-14 flex items-center justify-center bg-green-50 !rounded-full mb-6 feature-icon">
+<i class="ri-advertisement-line ri-xl text-[#00594F]"></i>
+</div>
+<h3 class="text-xl font-bold mb-4 text-black">多言語SEMキャンペーン</h3>
+<p class="text-gray-600">あらゆる言語・地域で成果を生むPPCを設計。データに基づく最適化でROIを最大化します。</p>
+</div>
+<!-- Feature 4 -->
+<div class="bg-white p-8 !rounded-lg shadow-sm feature-card">
+<div class="w-14 h-14 flex items-center justify-center bg-blue-50 !rounded-full mb-6 feature-icon">
+<i class="ri-bar-chart-grouped-line ri-xl text-[#0A3A5A]"></i>
+</div>
+<h3 class="text-xl font-bold mb-4 text-black">競合分析</h3>
+<p class="text-gray-600">主要市場の競合戦略を可視化。勝ち筋を明確にし、優位性を築くための洞察を提供します。</p>
+</div>
+<!-- Feature 5 -->
+<div class="bg-white p-8 !rounded-lg shadow-sm feature-card">
+<div class="w-14 h-14 flex items-center justify-center bg-red-50 !rounded-full mb-6 feature-icon">
+<i class="ri-links-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-4 text-black">国際リンク構築</h3>
+<p class="text-gray-600">世界の有力メディアから高品質な被リンクを獲得。ブランド評価と検索順位を加速させます。</p>
+</div>
+<!-- Feature 6 -->
+<div class="bg-white p-8 !rounded-lg shadow-sm feature-card">
+<div class="w-14 h-14 flex items-center justify-center bg-green-50 !rounded-full mb-6 feature-icon">
+<i class="ri-line-chart-line ri-xl text-[#00594F]"></i>
+</div>
+<h3 class="text-xl font-bold mb-4 text-black">カスタム分析レポート</h3>
+<p class="text-gray-600">“見るべき指標”だけを見える化。順位から収益までリアルタイムで把握し、賢くスケールします。</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Proceso de Trabajo -->
+<section class="py-20 bg-black text-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl sm:text-4xl font-bold">グローバル成功を導く実証済みプロセス</h2>
+<p class="text-lg text-gray-300 mt-4 max-w-3xl mx-auto">各プロジェクトで一貫性のある成果を出すため、データに基づいた体系的アプローチを徹底しています。</p>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-start space-y-12 md:space-y-0">
+<!-- Paso 1 -->
+<div class="flex flex-col items-center text-center process-item md:w-1/4">
+<div class="w-20 h-20 flex items-center justify-center bg-primary/10 !rounded-full mb-6">
+<i class="ri-search-2-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-3">徹底分析</h3>
+<p class="text-gray-300">現状のポジショニング、競合状況、市場動向を深く診断。</p>
+</div>
+<!-- Paso 2 -->
+<div class="flex flex-col items-center text-center process-item md:w-1/4">
+<div class="w-20 h-20 flex items-center justify-center bg-primary/10 !rounded-full mb-6">
+<i class="ri-draft-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-3">戦略的プランニング</h3>
+<p class="text-gray-300">長期ビジョンと整合し、目標から逆算したデータドリブンな計画を策定。</p>
+</div>
+<!-- Paso 3 -->
+<div class="flex flex-col items-center text-center process-item md:w-1/4">
+<div class="w-20 h-20 flex items-center justify-center bg-primary/10 !rounded-full mb-6">
+<i class="ri-code-box-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-3">精密な実行</h3>
+<p class="text-gray-300">国際基準に沿い、細部までこだわった実装を行います。</p>
+</div>
+<!-- Paso 4 -->
+<div class="flex flex-col items-center text-center process-item md:w-1/4">
+<div class="w-20 h-20 flex items-center justify-center bg-primary/10 !rounded-full mb-6">
+<i class="ri-line-chart-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-3">継続的な最適化</h3>
+<p class="text-gray-300">プロアクティブなモニタリングと改善で、成果を最大化し続けます。</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Casos de Éxito -->
+<section class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl sm:text-4xl font-bold text-black">成功事例</h2>
+<p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">私たちのソリューションで企業がどのように成果を伸ばしたかをご紹介します。</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Caso 1 -->
+<div class="bg-white border border-gray-200 !rounded-lg overflow-hidden shadow-sm">
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/3196f66c204f24e7cbc03b7f93f29215.jpeg');"></div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 flex items-center justify-center">
+<img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/507e3563646fb04ee3125683e63b0023.png" alt="Mia Cosmetic Logo" class="w-full h-full object-contain !rounded-full">
+</div>
+<h3 class="text-xl font-bold ml-4">Mia Cosmetic Store</h3>
+</div>
+<p class="text-gray-600 mb-4">中南米全域での多言語SEOと地域別SEMにより、国際オーガニック流入が172%増、オンライン売上が148%成長。</p>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-gray-500">ビューティー・フレグランス</span>
+<span class="text-sm font-medium text-primary">トラフィック +172%</span>
+</div>
+</div>
+</div>
+<!-- Caso 2 -->
+<div class="bg-white border border-gray-200 !rounded-lg overflow-hidden shadow-sm">
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/322357272d3d0b7441984273860f133f.jpeg');"></div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 flex items-center justify-center">
+<img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/624dded52d7b80091f70eef07b1f1ac0.png" alt="Happy Science Logo" class="w-full h-full object-contain !rounded-full">
+</div>
+<h3 class="text-xl font-bold ml-4">Happy Science</h3>
+</div>
+<p class="text-gray-600 mb-4">英語・スペイン語・日本語での多言語SEOと文化適応型SEMにより、国際新規登録者が204%増、コンバージョン単価は38%削減。</p>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-gray-500">教育・スピリチュアル</span>
+<span class="text-sm font-medium text-primary">CPA -38%</span>
+</div>
+</div>
+</div>
+<!-- Caso 3 -->
+<div class="bg-white border border-gray-200 !rounded-lg overflow-hidden shadow-sm">
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/0a623ee41877c8eb5878a248babc0060.jpeg');"></div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 flex items-center justify-center">
+<img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/01cdabd3b2d2f19fb42ae8f04a2dcc6e.png" alt="ARI Production Logo" class="w-full h-full object-contain !rounded-full">
+</div>
+<h3 class="text-xl font-bold ml-4">ARI Production</h3>
+</div>
+<p class="text-gray-600 mb-4">日・英・西の多言語キーワード64語でGoogle上位3位以内を達成。国際テクニカルSEOと高精度SEMで法人リードが119%増。</p>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-gray-500">映像制作</span>
+<span class="text-sm font-medium text-primary">リード +119%</span>
+</div>
+</div>
+</div>
+<!-- Caso 4 -->
+<div class="bg-white border border-gray-200 !rounded-lg overflow-hidden shadow-sm">
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/7275e19282d5203c6cd20e576e1eb5db.png');"></div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 flex items-center justify-center">
+<img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/6323ba7407b49015e920b04c98901adc.png" alt="Utah Mountain Furniture Logo" class="w-full h-full object-contain !rounded-full">
+</div>
+<h3 class="text-xl font-bold ml-4">Utah Mountain Furniture</h3>
+</div>
+<p class="text-gray-600 mb-4">国際Google広告の最適化と市場別SEMにより、グローバルアプリのトラフィックが185%増、米国での可視性が92%改善。</p>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-gray-500">ソフトウェア開発</span>
+<span class="text-sm font-medium text-primary">ダウンロード +185%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-20 bg-black text-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-gradient-to-r from-[#0A3A5A] to-[#00594F] p-12 !rounded-lg relative overflow-hidden" style="background-image: url('https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/df1f7dc8c055463af7d95b8fcdbcd3b8.png'); background-size: cover; background-position: left center;">
+<div class="relative z-10 max-w-3xl">
+<h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">グローバルなデジタルプレゼンスを一気に加速しませんか？</h2>
+<p class="text-lg mb-8 text-white">無料相談を予約して、SEO・SEMでビジネス目標の達成へ。最適なロードマップをご提案します。</p>
+<div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+<a href="#" class="inline-block bg-primary text-white px-8 py-4 !rounded-button font-medium custom-button whitespace-nowrap hover:bg-opacity-90 transition-colors duration-300" onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';">今すぐ始める</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Modal de consulta -->
+<div id="consultationModal" class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 hidden">
+<div class="bg-white p-8 !rounded-lg max-w-2xl w-full mx-4 relative">
+<button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-close-line ri-2x"></i>
+</div>
+</button>
+<h2 class="text-3xl font-bold mb-6 text-black">無料相談を予約する</h2>
+<form id="consultationForm" class="max-h-[80vh] overflow-y-auto pr-4">
+<h2 class="text-2xl font-semibold mb-6">どのようにサポートできますか？</h2>
+<div class="space-y-4 mb-8">
+<label class="flex items-center p-4 border border-gray-200 !rounded-lg cursor-pointer hover:border-primary transition-colors">
+<input type="radio" name="inquiry" value="seo" class="hidden" required>
+<div class="w-5 h-5 border-2 border-gray-300 !rounded-full flex items-center justify-center mr-3">
+<div class="w-2.5 h-2.5 bg-primary !rounded-full hidden"></div>
+</div>
+<div class="flex items-center">
+<i class="ri-focus-3-line text-primary mr-3"></i>
+<span>SEOを強化したい</span>
+</div>
+</label>
+<label class="flex items-center p-4 border border-gray-200 !rounded-lg cursor-pointer hover:border-primary transition-colors">
+<input type="radio" name="inquiry" value="multilingual" class="hidden">
+<div class="w-5 h-5 border-2 border-gray-300 !rounded-full flex items-center justify-center mr-3">
+<div class="w-2.5 h-2.5 bg-primary !rounded-full hidden"></div>
+</div>
+<div class="flex items-center">
+<i class="ri-global-line text-primary mr-3"></i>
+<span>多言語キャンペーンの支援が必要</span>
+</div>
+</label>
+<label class="flex items-center p-4 border border-gray-200 !rounded-lg cursor-pointer hover:border-primary transition-colors">
+<input type="radio" name="inquiry" value="plans" class="hidden">
+<div class="w-5 h-5 border-2 border-gray-300 !rounded-full flex items-center justify-center mr-3">
+<div class="w-2.5 h-2.5 bg-primary !rounded-full hidden"></div>
+</div>
+<div class="flex items-center">
+<i class="ri-question-line text-primary mr-3"></i>
+<span>プランについて相談したい</span>
+</div>
+</label>
+</div>
+<div class="space-y-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2" for="name">お名前</label>
+<input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-200 !rounded-lg text-gray-700 focus:outline-none focus:border-primary transition-colors" required>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2" for="email">メールアドレス</label>
+<input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-200 !rounded-lg text-gray-700 focus:outline-none focus:border-primary transition-colors" required>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2" for="message">ご相談内容</label>
+<textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-200 !rounded-lg text-gray-700 focus:outline-none focus:border-primary transition-colors resize-none" required></textarea>
+</div>
+</div>
+<div class="mt-8">
+<label class="block text-sm font-medium text-gray-700 mb-2">ミーティングを予約</label>
+<div class="border border-gray-200 !rounded-lg p-4">
+<div class="flex items-center justify-between mb-4">
+<button type="button" class="text-gray-500 hover:text-gray-700">
+<i class="ri-arrow-left-s-line"></i>
+</button>
+<span class="font-medium">2025年4月</span>
+<button type="button" class="text-gray-500 hover:text-gray-700">
+<i class="ri-arrow-right-s-line"></i>
+</button>
+</div>
+<div class="grid grid-cols-7 gap-2 text-center mb-2">
+<span class="text-sm text-gray-500">月</span>
+<span class="text-sm text-gray-500">火</span>
+<span class="text-sm text-gray-500">水</span>
+<span class="text-sm text-gray-500">木</span>
+<span class="text-sm text-gray-500">金</span>
+<span class="text-sm text-gray-500">土</span>
+<span class="text-sm text-gray-500">日</span>
+</div>
+<div class="grid grid-cols-7 gap-2 text-center">
+<button type="button" class="text-gray-400">29</button>
+<button type="button" class="text-gray-400">30</button>
+<button type="button">1</button>
+<button type="button">2</button>
+<button type="button">3</button>
+<button type="button">4</button>
+<button type="button">5</button>
+<button type="button">6</button>
+<button type="button">7</button>
+<button type="button">8</button>
+<button type="button">9</button>
+<button type="button">10</button>
+<button type="button">11</button>
+<button type="button">12</button>
+<button type="button">13</button>
+<button type="button">14</button>
+<button type="button">15</button>
+<button type="button">16</button>
+<button type="button">17</button>
+<button type="button">18</button>
+<button type="button">19</button>
+<button type="button">20</button>
+<button type="button">21</button>
+<button type="button">22</button>
+<button type="button">23</button>
+<button type="button">24</button>
+<button type="button">25</button>
+<button type="button">26</button>
+<button type="button">27</button>
+<button type="button">28</button>
+<button type="button">29</button>
+<button type="button">30</button>
+<button type="button" class="text-gray-400">1</button>
+<button type="button" class="text-gray-400">2</button>
+<button type="button" class="text-gray-400">3</button>
+</div>
+</div>
+<div class="mt-4">
+<label class="block text-sm font-medium text-gray-700 mb-2">空き時間枠（GMT-6）</label>
+<div class="grid grid-cols-4 gap-2">
+<button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">07:00</button>
+<button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">08:00</button>
+<button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">09:00</button>
+<button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">10:00</button>
+<button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">11:00</button>
+<button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">12:00</button>
+<button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">13:00</button>
+<button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">14:00</button>
+<button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">15:00</button>
+<button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">16:00</button>
+<button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">17:00</button>
+<button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">18:00</button>
+</div>
+</div>
+</div>
+<button type="submit" class="w-full bg-primary text-white py-3 !rounded-lg font-medium mt-8 hover:bg-opacity-90 transition-colors">メッセージを送信</button>
+</form>
+</div>
+</div>
+<!-- Botón de regreso arriba -->
+<button id="backToTop" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 !rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-arrow-up-line ri-lg"></i>
+</div>
+</button>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const mainNav = document.getElementById('mainNav');
+const backToTopButton = document.getElementById('backToTop');
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+if (this.getAttribute('href') !== '#' && !this.hasAttribute('onclick')) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+const headerOffset = 100;
+const elementPosition = targetElement.getBoundingClientRect().top;
+const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+window.scrollTo({
+top: offsetPosition,
+behavior: 'smooth'
+});
+}
+}
+});
+});
+// Modal functionality
+const modal = document.getElementById('consultationModal');
+const closeModalButton = document.getElementById('closeModal');
+const consultationForm = document.getElementById('consultationForm');
+const calendarDays = document.querySelectorAll('.grid-cols-7 button');
+const timeSlots = document.querySelectorAll('.grid-cols-4 button');
+calendarDays.forEach(day => {
+day.addEventListener('click', () => {
+calendarDays.forEach(d => d.classList.remove('bg-primary', 'text-white'));
+day.classList.add('bg-primary', 'text-white');
+});
+});
+timeSlots.forEach(slot => {
+slot.addEventListener('click', () => {
+timeSlots.forEach(s => s.classList.remove('bg-primary', 'text-white'));
+slot.classList.add('bg-primary', 'text-white');
+});
+});
+closeModalButton.addEventListener('click', function() {
+modal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+});
+modal.addEventListener('click', function(e) {
+if (e.target === modal) {
+modal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+});
+// Radio button functionality
+const radioInputs = document.querySelectorAll('input[type="radio"]');
+radioInputs.forEach(input => {
+input.addEventListener('change', function() {
+const radioButtons = document.querySelectorAll('input[name="' + this.name + '"]');
+radioButtons.forEach(radio => {
+const indicator = radio.nextElementSibling.querySelector('div:last-child');
+if (radio.checked) {
+indicator.classList.remove('hidden');
+} else {
+indicator.classList.add('hidden');
+}
+});
+});
+});
+// Form submission
+consultationForm.addEventListener('submit', function(e) {
+e.preventDefault();
+const formData = new FormData(consultationForm);
+const data = Object.fromEntries(formData);
+const confirmationModal = document.createElement('div');
+confirmationModal.className = 'fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50';
+confirmationModal.innerHTML = `
+<div class="bg-white p-8 !rounded-lg max-w-md w-full mx-4">
+<h3 class="text-2xl font-bold mb-4 text-black">ご相談の予約が完了しました</h3>
+<p class="text-gray-700 mb-6">ご予約ありがとうございます。ビデオ通話の詳細を記載した確認メールをお送りします。</p>
+<button class="bg-primary text-white px-6 py-2 !rounded-button">閉じる</button>
+</div>
+`;
+document.body.appendChild(confirmationModal);
+modal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+confirmationModal.querySelector('button').addEventListener('click', function() {
+confirmationModal.remove();
+consultationForm.reset();
+});
+});
+// Navigation and back to top button
+mainNav.addEventListener('mouseenter', function() {
+mainNav.classList.add('bg-black', 'bg-opacity-80', 'backdrop-blur-sm');
+});
+mainNav.addEventListener('mouseleave', function() {
+if (window.scrollY <= 100) {
+mainNav.classList.remove('bg-black', 'bg-opacity-80', 'backdrop-blur-sm');
+}
+});
+window.addEventListener('scroll', function() {
+if (window.scrollY > 100) {
+mainNav.classList.add('bg-black', 'bg-opacity-80', 'backdrop-blur-sm');
+} else if (!mainNav.matches(':hover')) {
+mainNav.classList.remove('bg-black', 'bg-opacity-80', 'backdrop-blur-sm');
+}
+if (window.scrollY > 300) {
+backToTopButton.classList.remove('opacity-0', 'invisible');
+backToTopButton.classList.add('opacity-100', 'visible');
+} else {
+backToTopButton.classList.remove('opacity-100', 'visible');
+backToTopButton.classList.add('opacity-0', 'invisible');
+}
+});
+backToTopButton.addEventListener('click', function() {
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+});
+});
+</script>
+</body>
+</html>
