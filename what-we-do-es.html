@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO MET</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+  font-family: 'Inter', sans-serif;
+}
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.custom-button {
+  transition: all 0.3s ease;
+}
+.custom-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.feature-icon {
+  transition: all 0.3s ease;
+}
+.feature-card:hover .feature-icon {
+  transform: scale(1.1);
+}
+.feature-card {
+  transition: all 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+.process-item {
+  position: relative;
+}
+.process-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 2.5rem;
+  right: -1rem;
+  width: 2rem;
+  height: 2px;
+  background-color: #FF0000;
+}
+@media (max-width: 768px) {
+  .process-item:not(:last-child)::after {
+    display: none;
+  }
+}
+</style>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#FF0000',
+        secondary: '#000000'
+      },
+      borderRadius: {
+        'none': '0px',
+        'sm': '4px',
+        DEFAULT: '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '20px',
+        '2xl': '24px',
+        '3xl': '32px',
+        'full': '9999px',
+        'button': '8px'
+      }
+    }
+  }
+}
+</script>
+</head>
+<body class="bg-white">
+<!-- Navegación -->
+<nav class="fixed w-full z-50 transition-all duration-300" id="mainNav">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <div class="flex items-center">
+        <a href="/">
+          <img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/28f95b224462cb1a70de312f51c49b10.png" alt="Logo" class="h-8">
+        </a>
+      </div>
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="/what-we-do-es.html" class="text-white hover:text-primary transition-colors duration-300">Qué hacemos</a>
+        <a href="/how-we-do-it-es.html" class="text-white hover:text-primary transition-colors duration-300">Cómo lo hacemos</a>
+        <a href="#blog" class="text-white hover:text-primary transition-colors duration-300">Blog</a>
+        <a href="#" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap hover:bg-white hover:text-[#FF0000] transition-colors duration-300"
+           onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';">
+          Empecemos
+        </a>
+      </div>
+      <div class="md:hidden flex items-center">
+        <button class="text-white" aria-label="Abrir menú">
+          <div class="w-8 h-8 flex items-center justify-center">
+            <i class="ri-menu-line ri-2x"></i>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="relative bg-black text-white py-[9.36rem] overflow-hidden" id="services">
+  <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://readdy.ai/api/search-image?query=professional%20digital%20marketing%20team%20working%20on%20SEO%20and%20SEM%20strategies%20in%20a%20modern%20office%20with%20multiple%20screens%20showing%20analytics%20and%20search%20engine%20results%2C%20dark%20atmosphere%20with%20blue%20accent%20lighting%2C%20high-end%20corporate%20environment&width=1920&height=1080&seq=1&orientation=landscape');"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold mb-8 leading-tight max-w-4xl mt-[30px]">
+      Llevamos tu marca al mundo, conectándola de forma auténtica con audiencias globales
+    </h1>
+    <p class="text-xl mb-10 text-gray-300 max-w-2xl">
+      Transforma tu presencia internacional con estrategias de SEO y SEM basadas en datos. Ayudamos a negocios como el tuyo a llegar y conquistar mercados globales de forma efectiva.
+    </p>
+    <a href="#" class="inline-block bg-primary text-white px-10 py-5 !rounded-button text-lg font-medium custom-button whitespace-nowrap hover:bg-white hover:text-[#FF0000] transition-colors duration-300" onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';">Empecemos</a>
+  </div>
+</section>
+
+<!-- Servicios principales -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-black">
+        Construimos puentes digitales que conectan marcas con audiencias globales, resolviendo las tres preguntas clave para lograr visibilidad y éxito en múltiples idiomas y mercados.
+      </h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Tarjeta 1 -->
+      <div class="bg-[#0A3A5A] p-8 !rounded-lg text-white service-card">
+        <div class="w-16 h-16 flex items-center justify-center bg-white/10 !rounded-full mb-6">
+          <i class="ri-focus-3-line ri-2x text-white"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-4">¿Cómo conecto mi marca con los clientes correctos en distintos mercados?</h3>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start">
+            <div class="w-5 h-5 flex items-center justify-center mt-1 mr-2">
+              <i class="ri-check-line text-white"></i>
+            </div>
+            <span>Con estrategias de branding segmentado y culturalmente adaptadas que potencian tu visibilidad donde más importa.</span>
+          </li>
+        </ul>
+        <div class="flex justify-between items-center mt-auto">
+          <span class="text-lg font-medium">Descubre nuevas oportunidades de mercado</span>
+          <div class="w-10 h-10 flex items-center justify-center cursor-pointer bg-white/10 !rounded-full hover:bg-white/20 transition-colors duration-300" onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';">
+            <i class="ri-arrow-right-line"></i>
+          </div>
+        </div>
+      </div>
+      <!-- Tarjeta 2 -->
+      <div class="bg-primary p-8 !rounded-lg text-white service-card">
+        <div class="w-16 h-16 flex items-center justify-center bg-white/10 !rounded-full mb-6">
+          <i class="ri-line-chart-line ri-2x text-white"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-4">¿Cómo posiciono mi negocio en buscadores a nivel internacional?</h3>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start">
+            <div class="w-5 h-5 flex items-center justify-center mt-1 mr-2">
+              <i class="ri-check-line text-white"></i>
+            </div>
+            <span>Optimizamos tu presencia con SEO multilingüe y SEM inteligente para dominar buscadores en cada idioma y región.</span>
+          </li>
+        </ul>
+        <div class="flex justify-between items-center mt-auto">
+          <span class="text-lg font-medium">Lleva tu presencia online al siguiente nivel</span>
+          <div class="w-10 h-10 flex items-center justify-center cursor-pointer bg-white/10 !rounded-full hover:bg-white/20 transition-colors duration-300" onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';">
+            <i class="ri-arrow-right-line"></i>
+          </div>
+        </div>
+      </div>
+      <!-- Tarjeta 3 -->
+      <div class="bg-[#00594F] p-8 !rounded-lg text-white service-card">
+        <div class="w-16 h-16 flex items-center justify-center bg-white/10 !rounded-full mb-6">
+          <i class="ri-rocket-line ri-2x text-white"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-4">¿Cómo convierto el tráfico global en crecimiento real y sostenible?</h3>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start">
+            <div class="w-5 h-5 flex items-center justify-center mt-1 mr-2">
+              <i class="ri-check-line text-white"></i>
+            </div>
+            <span>Aplicamos técnicas avanzadas de conversión y analítica para transformar visitas en clientes reales alrededor del mundo.</span>
+          </li>
+        </ul>
+        <div class="flex justify-between items-center mt-auto">
+          <span class="text-lg font-medium">Convierte tu tráfico global en resultados</span>
+          <div class="w-10 h-10 flex items-center justify-center cursor-pointer bg-white/10 !rounded-full hover:bg-white/20 transition-colors duration-300" onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';">
+            <i class="ri-arrow-right-line"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Características -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-black">Soluciones de SEO y SEM global que impulsan crecimiento real</h2>
+      <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">
+        Desbloquea el potencial de tu marca con estrategias internacionales diseñadas para ampliar tu alcance, elevar tu visibilidad y convertir el interés en resultados sostenibles.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Feature 1 -->
+      <div class="bg-white p-8 !rounded-lg shadow-sm feature-card">
+        <div class="w-14 h-14 flex items-center justify-center bg-blue-50 !rounded-full mb-6 feature-icon">
+          <i class="ri-search-line ri-xl text-[#0A3A5A]"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-4 text-black">Auditoría SEO Internacional</h3>
+        <p class="text-gray-600">Detecta oportunidades ocultas con un análisis profundo: desde keywords y optimización técnica hasta una arquitectura pensada para impactar globalmente.</p>
+      </div>
+      <!-- Feature 2 -->
+      <div class="bg-white p-8 !rounded-lg shadow-sm feature-card">
+        <div class="w-14 h-14 flex items-center justify-center bg-red-50 !rounded-full mb-6 feature-icon">
+          <i class="ri-global-line ri-xl text-primary"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-4 text-black">Localización de Contenidos</h3>
+        <p class="text-gray-600">Habla el idioma de tu audiencia. Adaptamos tu contenido para que resuene localmente sin perder fuerza SEO en cada mercado objetivo.</p>
+      </div>
+      <!-- Feature 3 -->
+      <div class="bg-white p-8 !rounded-lg shadow-sm feature-card">
+        <div class="w-14 h-14 flex items-center justify-center bg-green-50 !rounded-full mb-6 feature-icon">
+          <i class="ri-advertisement-line ri-xl text-[#00594F]"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-4 text-black">Campañas SEM Multilingües</h3>
+        <p class="text-gray-600">Impulsa tu crecimiento con PPC diseñado para cada idioma y región, respaldado por insights que maximizan el ROI.</p>
+      </div>
+      <!-- Feature 4 -->
+      <div class="bg-white p-8 !rounded-lg shadow-sm feature-card">
+        <div class="w-14 h-14 flex items-center justify-center bg-blue-50 !rounded-full mb-6 feature-icon">
+          <i class="ri-bar-chart-grouped-line ri-xl text-[#0A3A5A]"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-4 text-black">Análisis de Competidores</h3>
+        <p class="text-gray-600">Mantente un paso adelante. Descubrimos las estrategias de tus competidores en mercados clave y te damos la ventaja para superarlos.</p>
+      </div>
+      <!-- Feature 5 -->
+      <div class="bg-white p-8 !rounded-lg shadow-sm feature-card">
+        <div class="w-14 h-14 flex items-center justify-center bg-red-50 !rounded-full mb-6 feature-icon">
+          <i class="ri-links-line ri-xl text-primary"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-4 text-black">Link Building Internacional</h3>
+        <p class="text-gray-600">Construye autoridad global. Obtenemos backlinks de publishers confiables en todo el mundo para elevar tu reputación y rankings.</p>
+      </div>
+      <!-- Feature 6 -->
+      <div class="bg-white p-8 !rounded-lg shadow-sm feature-card">
+        <div class="w-14 h-14 flex items-center justify-center bg-green-50 !rounded-full mb-6 feature-icon">
+          <i class="ri-line-chart-line ri-xl text-[#00594F]"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-4 text-black">Reportes y Analítica a Medida</h3>
+        <p class="text-gray-600">Mide lo que importa. Tableros personalizados con insights en tiempo real: desde rankings hasta ingresos, para optimizar y escalar con inteligencia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Proceso -->
+<section class="py-20 bg-black text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold">Nuestro proceso probado para el éxito global</h2>
+      <p class="text-lg text-gray-300 mt-4 max-w-3xl mx-auto">Seguimos una metodología estructurada y basada en datos para asegurar resultados consistentes, medibles y escalables en cada proyecto.</p>
+    </div>
+    <div class="flex flex-col md:flex-row justify-between items-start space-y-12 md:space-y-0">
+      <!-- Paso 1 -->
+      <div class="flex flex-col items-center text-center process-item md:w-1/4">
+        <div class="w-20 h-20 flex items-center justify-center bg-primary/10 !rounded-full mb-6">
+          <i class="ri-search-2-line ri-2x text-primary"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Análisis Integral</h3>
+        <p class="text-gray-300">Revisión profunda del posicionamiento actual, performance de competidores y dinámica del mercado.</p>
+      </div>
+      <!-- Paso 2 -->
+      <div class="flex flex-col items-center text-center process-item md:w-1/4">
+        <div class="w-20 h-20 flex items-center justify-center bg-primary/10 !rounded-full mb-6">
+          <i class="ri-draft-line ri-2x text-primary"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Planeación Estratégica a Medida</h3>
+        <p class="text-gray-300">Planes respaldados por datos y orientados a metas que se alinean con tu visión de negocio.</p>
+      </div>
+      <!-- Paso 3 -->
+      <div class="flex flex-col items-center text-center process-item md:w-1/4">
+        <div class="w-20 h-20 flex items-center justify-center bg-primary/10 !rounded-full mb-6">
+          <i class="ri-code-box-line ri-2x text-primary"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Implementación Precisa</h3>
+        <p class="text-gray-300">Ejecución con atención al detalle, siguiendo las mejores prácticas internacionales.</p>
+      </div>
+      <!-- Paso 4 -->
+      <div class="flex flex-col items-center text-center process-item md:w-1/4">
+        <div class="w-20 h-20 flex items-center justify-center bg-primary/10 !rounded-full mb-6">
+          <i class="ri-line-chart-line ri-2x text-primary"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Optimización Continua</h3>
+        <p class="text-gray-300">Monitoreo proactivo y mejoras constantes para asegurar máximo rendimiento y resultados duraderos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Casos de éxito -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-black">Casos de éxito</h2>
+      <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Descubre cómo ayudamos a marcas como la tuya a lograr resultados extraordinarios.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Caso 1 -->
+      <div class="bg-white border border-gray-200 !rounded-lg overflow-hidden shadow-sm">
+        <div class="h-48 bg-cover bg-center" style="background-image: url('https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/3196f66c204f24e7cbc03b7f93f29215.jpeg');"></div>
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 flex items-center justify-center">
+              <img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/507e3563646fb04ee3125683e63b0023.png" alt="Logo Mia Cosmetic" class="w-full h-full object-contain !rounded-full">
+            </div>
+            <h3 class="text-xl font-bold ml-4">Mia Cosmetic Store</h3>
+          </div>
+          <p class="text-gray-600 mb-4">+172% en tráfico orgánico internacional y +148% en ventas online en Colombia y Latinoamérica tras implementar una estrategia SEO multilingüe en español neutro y campañas SEM segmentadas por mercado.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-medium text-gray-500">Belleza y Fragancias</span>
+            <span class="text-sm font-medium text-primary">+172% Tráfico</span>
+          </div>
+        </div>
+      </div>
+      <!-- Caso 2 -->
+      <div class="bg-white border border-gray-200 !rounded-lg overflow-hidden shadow-sm">
+        <div class="h-48 bg-cover bg-center" style="background-image: url('https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/322357272d3d0b7441984273860f133f.jpeg');"></div>
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 flex items-center justify-center">
+              <img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/624dded52d7b80091f70eef07b1f1ac0.png" alt="Logo Happy Science" class="w-full h-full object-contain !rounded-full">
+            </div>
+            <h3 class="text-xl font-bold ml-4">Happy Science</h3>
+          </div>
+          <p class="text-gray-600 mb-4">-38% en costo por conversión y +204% en nuevos suscriptores internacionales gracias a una estrategia SEO multilingüe (inglés, español y japonés) y campañas SEM con mensajes adaptados culturalmente para EE. UU., LATAM y Asia.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-medium text-gray-500">Educación y Espiritualidad</span>
+            <span class="text-sm font-medium text-primary">-38% CPA</span>
+          </div>
+        </div>
+      </div>
+      <!-- Caso 3 -->
+      <div class="bg-white border border-gray-200 !rounded-lg overflow-hidden shadow-sm">
+        <div class="h-48 bg-cover bg-center" style="background-image: url('https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/0a623ee41877c8eb5878a248babc0060.jpeg');"></div>
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 flex items-center justify-center">
+              <img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/01cdabd3b2d2f19fb42ae8f04a2dcc6e.png" alt="Logo ARI Production" class="w-full h-full object-contain !rounded-full">
+            </div>
+            <h3 class="text-xl font-bold ml-4">ARI Production</h3>
+          </div>
+          <p class="text-gray-600 mb-4">Top 3 en Google para 64 keywords multilingües (japonés, inglés y español), incrementando los leads corporativos en 119% con SEO internacional técnico y anuncios SEM hipersegmentados.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-medium text-gray-500">Producción Cinematográfica</span>
+            <span class="text-sm font-medium text-primary">+119% Leads</span>
+          </div>
+        </div>
+      </div>
+      <!-- Caso 4 -->
+      <div class="bg-white border border-gray-200 !rounded-lg overflow-hidden shadow-sm">
+        <div class="h-48 bg-cover bg-center" style="background-image: url('https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/7275e19282d5203c6cd20e576e1eb5db.png');"></div>
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 flex items-center justify-center">
+              <img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/6323ba7407b49015e920b04c98901adc.png" alt="Logo Utah Mountain Furniture" class="w-full h-full object-contain !rounded-full">
+            </div>
+            <h3 class="text-xl font-bold ml-4">Utah Mountain Furniture</h3>
+          </div>
+          <p class="text-gray-600 mb-4">+185% en tráfico global a la app y +92% en visibilidad en EE. UU. mediante campañas de Google Ads internacionales optimizadas y una estrategia SEM adaptada por mercado.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-medium text-gray-500">Desarrollo de Software</span>
+            <span class="text-sm font-medium text-primary">+185% Descargas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 bg-black text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-gradient-to-r from-[#0A3A5A] to-[#00594F] p-12 !rounded-lg relative overflow-hidden" style="background-image: url('https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/df1f7dc8c055463af7d95b8fcdbcd3b8.png'); background-size: cover; background-position: left center;">
+      <div class="relative z-10 max-w-3xl">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">¿Listo para impulsar tu presencia digital internacional?</h2>
+        <p class="text-lg mb-8 text-white">Agenda una consulta gratuita y descubre cómo nuestras soluciones de SEO y SEM pueden ayudarte a alcanzar tus metas de negocio.</p>
+        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+          <a href="#" class="inline-block bg-primary text-white px-8 py-4 !rounded-button font-medium custom-button whitespace-nowrap hover:bg-opacity-90 transition-colors duration-300" onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';">Empecemos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal de consulta -->
+<div id="consultationModal" class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 hidden">
+  <div class="bg-white p-8 !rounded-lg max-w-2xl w-full mx-4 relative">
+    <button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" aria-label="Cerrar modal">
+      <div class="w-8 h-8 flex items-center justify-center">
+        <i class="ri-close-line ri-2x"></i>
+      </div>
+    </button>
+    <h2 class="text-3xl font-bold mb-6 text-black">Agenda una consulta gratuita</h2>
+    <form id="consultationForm" class="max-h-[80vh] overflow-y-auto pr-4">
+      <h2 class="text-2xl font-semibold mb-6">¿Cómo podemos ayudarte?</h2>
+      <div class="space-y-4 mb-8">
+        <label class="flex items-center p-4 border border-gray-200 !rounded-lg cursor-pointer hover:border-primary transition-colors">
+          <input type="radio" name="inquiry" value="seo" class="hidden" required>
+          <div class="w-5 h-5 border-2 border-gray-300 !rounded-full flex items-center justify-center mr-3">
+            <div class="w-2.5 h-2.5 bg-primary !rounded-full hidden"></div>
+          </div>
+          <div class="flex items-center">
+            <i class="ri-focus-3-line text-primary mr-3"></i>
+            <span>Quiero mejorar mi SEO</span>
+          </div>
+        </label>
+        <label class="flex items-center p-4 border border-gray-200 !rounded-lg cursor-pointer hover:border-primary transition-colors">
+          <input type="radio" name="inquiry" value="multilingual" class="hidden">
+          <div class="w-5 h-5 border-2 border-gray-300 !rounded-full flex items-center justify-center mr-3">
+            <div class="w-2.5 h-2.5 bg-primary !rounded-full hidden"></div>
+          </div>
+          <div class="flex items-center">
+            <i class="ri-global-line text-primary mr-3"></i>
+            <span>Necesito campañas multilingües</span>
+          </div>
+        </label>
+        <label class="flex items-center p-4 border border-gray-200 !rounded-lg cursor-pointer hover:border-primary transition-colors">
+          <input type="radio" name="inquiry" value="plans" class="hidden">
+          <div class="w-5 h-5 border-2 border-gray-300 !rounded-full flex items-center justify-center mr-3">
+            <div class="w-2.5 h-2.5 bg-primary !rounded-full hidden"></div>
+          </div>
+          <div class="flex items-center">
+            <i class="ri-question-line text-primary mr-3"></i>
+            <span>Tengo dudas sobre los planes</span>
+          </div>
+        </label>
+      </div>
+
+      <div class="space-y-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2" for="name">Nombre</label>
+          <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-200 !rounded-lg text-gray-700 focus:outline-none focus:border-primary transition-colors" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2" for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-200 !rounded-lg text-gray-700 focus:outline-none focus:border-primary transition-colors" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2" for="message">Tu mensaje</label>
+          <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-200 !rounded-lg text-gray-700 focus:outline-none focus:border-primary transition-colors resize-none" required></textarea>
+        </div>
+      </div>
+
+      <div class="mt-8">
+        <label class="block text-sm font-medium text-gray-700 mb-2">Agenda una reunión</label>
+        <div class="border border-gray-200 !rounded-lg p-4">
+          <div class="flex items-center justify-between mb-4">
+            <button type="button" class="text-gray-500 hover:text-gray-700" aria-label="Mes anterior">
+              <i class="ri-arrow-left-s-line"></i>
+            </button>
+            <span class="font-medium">Abril 2025</span>
+            <button type="button" class="text-gray-500 hover:text-gray-700" aria-label="Mes siguiente">
+              <i class="ri-arrow-right-s-line"></i>
+            </button>
+          </div>
+          <div class="grid grid-cols-7 gap-2 text-center mb-2">
+            <span class="text-sm text-gray-500">Lu</span>
+            <span class="text-sm text-gray-500">Ma</span>
+            <span class="text-sm text-gray-500">Mi</span>
+            <span class="text-sm text-gray-500">Ju</span>
+            <span class="text-sm text-gray-500">Vi</span>
+            <span class="text-sm text-gray-500">Sá</span>
+            <span class="text-sm text-gray-500">Do</span>
+          </div>
+          <div class="grid grid-cols-7 gap-2 text-center">
+            <button type="button" class="text-gray-400">29</button>
+            <button type="button" class="text-gray-400">30</button>
+            <button type="button">1</button>
+            <button type="button">2</button>
+            <button type="button">3</button>
+            <button type="button">4</button>
+            <button type="button">5</button>
+            <button type="button">6</button>
+            <button type="button">7</button>
+            <button type="button">8</button>
+            <button type="button">9</button>
+            <button type="button">10</button>
+            <button type="button">11</button>
+            <button type="button">12</button>
+            <button type="button">13</button>
+            <button type="button">14</button>
+            <button type="button">15</button>
+            <button type="button">16</button>
+            <button type="button">17</button>
+            <button type="button">18</button>
+            <button type="button">19</button>
+            <button type="button">20</button>
+            <button type="button">21</button>
+            <button type="button">22</button>
+            <button type="button">23</button>
+            <button type="button">24</button>
+            <button type="button">25</button>
+            <button type="button">26</button>
+            <button type="button">27</button>
+            <button type="button">28</button>
+            <button type="button">29</button>
+            <button type="button">30</button>
+            <button type="button" class="text-gray-400">1</button>
+            <button type="button" class="text-gray-400">2</button>
+            <button type="button" class="text-gray-400">3</button>
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <label class="block text-sm font-medium text-gray-700 mb-2">Horarios disponibles (GMT-6)</label>
+          <div class="grid grid-cols-4 gap-2">
+            <button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">07:00</button>
+            <button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">08:00</button>
+            <button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">09:00</button>
+            <button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">10:00</button>
+            <button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">11:00</button>
+            <button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">12:00</button>
+            <button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">13:00</button>
+            <button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">14:00</button>
+            <button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">15:00</button>
+            <button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">16:00</button>
+            <button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">17:00</button>
+            <button type="button" class="px-4 py-2 border border-gray-200 !rounded-lg text-sm hover:border-primary transition-colors">18:00</button>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="w-full bg-primary text-white py-3 !rounded-lg font-medium mt-8 hover:bg-opacity-90 transition-colors">Enviar mensaje</button>
+    </form>
+  </div>
+</div>
+
+<!-- Botón back to top -->
+<button id="backToTop" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 !rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300" aria-label="Volver arriba">
+  <div class="w-6 h-6 flex items-center justify-center">
+    <i class="ri-arrow-up-line ri-lg"></i>
+  </div>
+</button>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const mainNav = document.getElementById('mainNav');
+  const backToTopButton = document.getElementById('backToTop');
+
+  // Scroll suave para anclas
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      if (this.getAttribute('href') !== '#' && !this.hasAttribute('onclick')) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const headerOffset = 100;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
+
+  // Modal
+  const modal = document.getElementById('consultationModal');
+  const closeModalButton = document.getElementById('closeModal');
+  const consultationForm = document.getElementById('consultationForm');
+  const calendarDays = document.querySelectorAll('.grid-cols-7 button');
+  const timeSlots = document.querySelectorAll('.grid-cols-4 button');
+
+  calendarDays.forEach(day => {
+    day.addEventListener('click', () => {
+      calendarDays.forEach(d => d.classList.remove('bg-primary', 'text-white'));
+      day.classList.add('bg-primary', 'text-white');
+    });
+  });
+  timeSlots.forEach(slot => {
+    slot.addEventListener('click', () => {
+      timeSlots.forEach(s => s.classList.remove('bg-primary', 'text-white'));
+      slot.classList.add('bg-primary', 'text-white');
+    });
+  });
+
+  closeModalButton.addEventListener('click', function() {
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  });
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+  // Radio visual
+  const radioInputs = document.querySelectorAll('input[type="radio"]');
+  radioInputs.forEach(input => {
+    input.addEventListener('change', function() {
+      const radioButtons = document.querySelectorAll('input[name="' + this.name + '"]');
+      radioButtons.forEach(radio => {
+        const indicator = radio.nextElementSibling.querySelector('div:last-child');
+        if (radio.checked) {
+          indicator.classList.remove('hidden');
+        } else {
+          indicator.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // Envío formulario
+  consultationForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const confirmationModal = document.createElement('div');
+    confirmationModal.className = 'fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50';
+    confirmationModal.innerHTML = `
+      <div class="bg-white p-8 !rounded-lg max-w-md w-full mx-4">
+        <h3 class="text-2xl font-bold mb-4 text-black">¡Consulta agendada!</h3>
+        <p class="text-gray-700 mb-6">Gracias por agendar una consulta. Te enviaremos un correo de confirmación con los detalles de la videollamada.</p>
+        <button class="bg-primary text-white px-6 py-2 !rounded-button">Cerrar</button>
+      </div>
+    `;
+    document.body.appendChild(confirmationModal);
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+    confirmationModal.querySelector('button').addEventListener('click', function() {
+      confirmationModal.remove();
+      consultationForm.reset();
+    });
+  });
+
+  // Navegación y back to top
+  mainNav.addEventListener('mouseenter', function() {
+    mainNav.classList.add('bg-black', 'bg-opacity-80', 'backdrop-blur-sm');
+  });
+  mainNav.addEventListener('mouseleave', function() {
+    if (window.scrollY <= 100) {
+      mainNav.classList.remove('bg-black', 'bg-opacity-80', 'backdrop-blur-sm');
+    }
+  });
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 100) {
+      mainNav.classList.add('bg-black', 'bg-opacity-80', 'backdrop-blur-sm');
+    } else if (!mainNav.matches(':hover')) {
+      mainNav.classList.remove('bg-black', 'bg-opacity-80', 'backdrop-blur-sm');
+    }
+    if (window.scrollY > 300) {
+      backToTopButton.classList.remove('opacity-0', 'invisible');
+      backToTopButton.classList.add('opacity-100', 'visible');
+    } else {
+      backToTopButton.classList.remove('opacity-100', 'visible');
+      backToTopButton.classList.add('opacity-0', 'invisible');
+    }
+  });
+  backToTopButton.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+});
+</script>
+</body>
+</html>
