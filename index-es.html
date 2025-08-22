@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO MET</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+}
+.slide {
+position: absolute;
+inset: 0;
+opacity: 0;
+transition: opacity 0.5s ease-in-out;
+}
+.slide:nth-child(1) {
+animation: fade1 21s infinite;
+}
+.slide:nth-child(2) {
+animation: fade2 21s infinite;
+}
+.slide:nth-child(3) {
+animation: fade3 21s infinite;
+}
+.slide:nth-child(4) {
+animation: fade4 21s infinite;
+}
+.slide:nth-child(5) {
+animation: fade5 21s infinite;
+}
+.slide:nth-child(6) {
+animation: fade6 21s infinite;
+}
+@keyframes fade1 {
+0%, 15% { opacity: 1; }
+16.67%, 100% { opacity: 0; }
+}
+@keyframes fade2 {
+0%, 15% { opacity: 0; }
+16.67%, 31.67% { opacity: 1; }
+33.33%, 100% { opacity: 0; }
+}
+@keyframes fade3 {
+0%, 31.67% { opacity: 0; }
+33.33%, 48.33% { opacity: 1; }
+50%, 100% { opacity: 0; }
+}
+@keyframes fade4 {
+0%, 48.33% { opacity: 0; }
+50%, 65% { opacity: 1; }
+66.67%, 100% { opacity: 0; }
+}
+@keyframes fade5 {
+0%, 65% { opacity: 0; }
+66.67%, 81.67% { opacity: 1; }
+83.33%, 100% { opacity: 0; }
+}
+@keyframes fade6 {
+0%, 81.67% { opacity: 0; }
+83.33%, 98.33% { opacity: 1; }
+100% { opacity: 0; }
+}
+.italic-text {
+font-style: italic;
+}
+.service-card {
+transition: transform 0.3s ease;
+}
+.service-card:hover {
+transform: translateY(-5px);
+}
+.custom-button {
+transition: all 0.3s ease;
+}
+.custom-button:hover {
+transform: translateY(-2px);
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: #FF0000; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #cc0000; }
+</style>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#FF0000',
+        secondary: '#000000'
+      },
+      borderRadius: {
+        'none': '0px',
+        'sm': '4px',
+        DEFAULT: '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '20px',
+        '2xl': '24px',
+        '3xl': '32px',
+        'full': '9999px',
+        'button': '8px'
+      }
+    }
+  }
+}
+</script>
+</head>
+<body class="bg-white">
+<!-- Navegación -->
+<nav class="fixed w-full z-50 transition-all duration-300" id="mainNav">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="/">
+          <img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/28f95b224462cb1a70de312f51c49b10.png" alt="Logo" class="h-8">
+        </a>
+      </div>
+
+      <!-- Menú escritorio -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="/what-we-do-es.html" class="text-white hover:text-primary transition-colors duration-300">Qué hacemos</a>
+        <a href="/how-we-do-it-es.html" class="text-white hover:text-primary transition-colors duration-300">Cómo lo hacemos</a>
+        <a href="#blog" class="text-white hover:text-primary transition-colors duration-300">Blog</a>
+        <a href="#" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap hover:bg-white hover:text-[#FF0000] transition-colors duration-300"
+           onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';">
+          Comencemos hoy
+        </a>
+
+        <!-- Idiomas alineados a la derecha -->
+        <div class="flex items-center space-x-4 ml-6">
+          <a href="index-es.html" class="text-white hover:text-primary transition-colors duration-300">ES</a>
+          <a href="index-il.html" class="text-white hover:text-primary transition-colors duration-300">IL</a>
+          <a href="index-jp.html" class="text-white hover:text-primary transition-colors duration-300">JP</a>
+        </div>
+      </div>
+
+      <!-- Menú móvil -->
+      <div class="md:hidden flex items-center">
+        <button class="text-white" aria-label="Abrir menú">
+          <div class="w-8 h-8 flex items-center justify-center">
+            <i class="ri-menu-line ri-2x"></i>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero min-h-screen flex items-center relative overflow-hidden">
+  <div class="absolute inset-0 w-full h-full" aria-hidden="true">
+    <iframe
+      class="w-full h-[120%] -translate-y-[10%]"
+      src="https://www.youtube.com/embed/AmS37yAsSe4?autoplay=1&mute=1&loop=1&playlist=AmS37yAsSe4&controls=0&modestbranding=1&rel=0&showinfo=0"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+  </div>
+  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-white relative z-10 mt-[30vh]">
+    <div class="max-w-3xl">
+      <h1 class="text-5xl sm:text-6xl font-bold mb-6">El consultor SEO y SEM multilingüe que estabas buscando</h1>
+      <p class="text-xl mb-8">Impulsa la visibilidad online de tu marca y escala posiciones en buscadores internacionales con un especialista que va más allá de las fronteras.</p>
+      <a href="#" class="inline-block bg-primary text-white px-8 py-4 !rounded-button font-medium custom-button whitespace-nowrap hover:bg-white hover:text-[#FF0000] transition-colors duration-300" onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';">Comencemos hoy</a>
+    </div>
+  </div>
+</section>
+
+<!-- Experiencia Section -->
+<section class="bg-white py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-4xl font-bold text-black mb-8">SEO internacional que genera resultados reales</h2>
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold text-black mb-4">Expande el alcance global de tu estrategia SEO</h3>
+          <p class="text-lg text-gray-800">Haz crecer tu presencia internacional y mejora tu posicionamiento en buscadores adaptando tu sitio web a múltiples idiomas.</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-black mb-4">Atrae tráfico orgánico de alta calidad</h3>
+          <p class="text-lg text-gray-800">Alcanza a tu audiencia ideal y aumenta conversiones optimizando tu contenido con palabras clave relevantes en cada idioma.</p>
+        </div>
+        <div class="mt-12">
+          <h3 class="text-2xl font-bold text-black mb-4">Diferénciate de la competencia global</h3>
+          <p class="text-lg text-gray-800">Gana ventaja estratégica en mercados internacionales y conquista una mayor cuota en distintos países y audiencias por idioma.</p>
+        </div>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=800&q=80" alt="Experiencia Digital" class="w-full h-auto !rounded-lg shadow-xl">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Soluciones Section -->
+<section id="services" class="bg-black text-white pt-12 pb-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl sm:text-5xl font-bold mb-16">Soluciones de SEO y SEM diseñadas para escalar tu crecimiento de negocio, de forma efectiva y con <span class="italic-text">resultados medibles</span></h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Tarjeta 1 -->
+      <div class="bg-[#0A3A5A] p-8 !rounded service-card">
+        <h3 class="text-2xl font-bold mb-4">Branding dirigido</h3>
+        <p class="mb-6">Conecta con los clientes que realmente importan.  
+        Potencia la visibilidad de tu marca, producto o evento.  
+        Lanza campañas segmentadas que entregan resultados reales.</p>
+        <div class="flex justify-between items-center mt-8">
+          <span class="text-lg font-medium">¿Listo para llegar más lejos? ¡Conversemos hoy!</span>
+          <div class="w-8 h-8 flex items-center justify-center cursor-pointer hover:bg-white/10 !rounded-full transition-colors duration-300" onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';" aria-label="Abrir consulta">
+            <i class="ri-arrow-right-line"></i>
+          </div>
+        </div>
+      </div>
+      <!-- Tarjeta 2 -->
+      <div class="bg-primary p-8 !rounded service-card">
+        <h3 class="text-2xl font-bold mb-4">Crecimiento con SEO y SEM</h3>
+        <p class="mb-6">Domina los buscadores y atrae leads de calidad.  
+        Mejora tu posicionamiento orgánico con estrategias SEO inteligentes.  
+        Maximiza el rendimiento de tus anuncios con campañas SEM basadas en datos.</p>
+        <div class="flex justify-between items-center mt-8">
+          <span class="text-lg font-medium">Que cada clic cuente. ¡Contáctanos ahora!</span>
+          <div class="w-8 h-8 flex items-center justify-center cursor-pointer hover:bg-white/10 !rounded-full transition-colors duration-300" onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';" aria-label="Abrir consulta">
+            <i class="ri-arrow-right-line"></i>
+          </div>
+        </div>
+      </div>
+      <!-- Tarjeta 3 -->
+      <div class="bg-[#00594F] p-8 !rounded service-card">
+        <h3 class="text-2xl font-bold mb-4">Impulso de conversiones</h3>
+        <p class="mb-6">Convierte el tráfico en crecimiento medible.  
+        Mejora tus tasas de conversión con experimentación basada en datos.  
+        Toma decisiones más inteligentes para desbloquear crecimiento sin límites.</p>
+        <div class="flex justify-between items-center mt-8">
+          <span class="text-lg font-medium">Haz que cada visita valga más. ¡Agenda una consulta!</span>
+          <div class="w-8 h-8 flex items-center justify-center cursor-pointer hover:bg-white/10 !rounded-full transition-colors duration-300" onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';" aria-label="Abrir consulta">
+            <i class="ri-arrow-right-line"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Metodología Section -->
+<section id="methodology" class="bg-white py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=800&q=80" alt="Metodología Digital" class="w-full h-auto !rounded-lg shadow-xl">
+      </div>
+      <div>
+        <h2 class="text-4xl font-bold text-black mb-8">Consultoría especializada en SEO internacional</h2>
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold text-black mb-4">Auditoría de SEO internacional</h3>
+          <p class="text-lg text-gray-800">Realizamos un análisis integral de tu estrategia SEO: evaluación de palabras clave, arquitectura del sitio, SEO técnico, optimización de contenidos y una revisión profunda de tu perfil de enlaces.</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-black mb-4">Servicios de SEM internacional</h3>
+          <p class="text-lg text-gray-800">Optimizamos tu estrategia de publicidad en buscadores a nivel internacional combinando investigación de keywords para PPC, creación de anuncios localizados y seguimiento detallado del rendimiento para generar resultados en múltiples mercados.</p>
+        </div>
+        <div class="mt-12">
+          <h3 class="text-2xl font-bold text-black mb-4">Investigación de palabras clave – orgánico y pagado</h3>
+          <p class="text-lg text-gray-800">Alineamos tus keywords orgánicas y de PPC con tus perfiles de cliente ideal mediante investigación estratégica y el desarrollo de mapas de palabras clave para SEO internacional.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Marcas Section -->
+<section class="bg-black text-white py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl font-bold mb-16 -mt-8">Grandes marcas potenciadas por nuestras <span class="italic-text">soluciones</span></h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-12 items-center">
+      <div class="flex justify-center">
+        <img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/507e3563646fb04ee3125683e63b0023.png" alt="Logo de marca" class="h-48 object-contain">
+      </div>
+      <div class="flex justify-center">
+        <img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/6323ba7407b49015e920b04c98901adc.png" alt="Logo de marca" class="h-48 object-contain">
+      </div>
+      <div class="flex justify-center">
+        <img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/624dded52d7b80091f70eef07b1f1ac0.png" alt="Logo de marca" class="h-48 object-contain">
+      </div>
+      <div class="flex justify-center">
+        <img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/01cdabd3b2d2f19fb42ae8f04a2dcc6e.png" alt="Logo de marca" class="h-48 object-contain">
+      </div>
+      <div class="flex justify-center">
+        <img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/5566a12ad1d191864e1aac19973cf878.png" alt="Logo de marca" class="h-48 object-contain">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Necesidades Section -->
+<section class="bg-black text-white pt-2 pb-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl font-bold mb-16">Descubre nuestras soluciones diseñadas para impulsar tu <span class="italic-text">éxito</span></h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="border-b md:border-b-0 md:border-r border-gray-700 pb-8 md:pb-0 md:pr-8">
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold mb-4">Convierte más visitas en clientes</h3>
+          <p class="text-lg">Incrementa tus ventas atrayendo más usuarios a tu sitio o app con estrategias diseñadas para maximizar conversiones.</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Haz que cada inversión cuente</h3>
+          <p class="text-lg">Reduce tu costo de adquisición y eleva el retorno de cada dólar invertido en marketing digital.</p>
+        </div>
+      </div>
+      <div class="pt-8 md:pt-0 md:pl-8">
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold mb-4">Haz que tu marca destaque</h3>
+          <p class="text-lg">Gana visibilidad, construye confianza y posiciona tu marca en la mente de tus futuros clientes.</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Entrega una experiencia digital que encante</h3>
+          <p class="text-lg">Guía a tus usuarios hacia la conversión con experiencias digitales memorables y sin fricciones.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Estrategias SEO Section -->
+<section class="bg-white py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-4xl font-bold text-black mb-8">SEO internacional orientado a resultados</h2>
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold text-black mb-4">Optimización de contenido On-Page para SEO</h3>
+          <p class="text-lg text-gray-800 text-justify">Implementamos mejores prácticas de SEO multilingüe para aumentar tu visibilidad en buscadores y ofrecer una experiencia óptima en todos los idiomas.</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-black mb-4">Seguimiento de posiciones por palabra clave</h3>
+          <p class="text-lg text-gray-800">Monitoreamos de cerca los datos de keywords para medir avances y detectar oportunidades ocultas en distintos mercados.</p>
+        </div>
+        <div class="mt-12">
+          <h3 class="text-2xl font-bold text-black mb-4">Análisis de competidores</h3>
+          <p class="text-lg text-gray-800">Evaluamos la presencia online y estrategias SEO de tus competidores locales para identificar fortalezas y áreas de oportunidad.</p>
+        </div>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=800&q=80" alt="Estrategias SEO" class="w-full h-auto !rounded-lg shadow-xl">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="bg-black text-white py-2">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl font-bold mb-16">Preguntas frecuentes</h2>
+    <div class="space-y-6" id="faqAccordion">
+      <div class="border-b border-gray-700">
+        <button class="w-full text-left py-4 flex justify-between items-center hover:text-primary transition-colors duration-300">
+          <span class="text-xl font-medium">¿Cuáles son las ventajas de externalizar el SEO internacional?</span>
+          <i class="ri-arrow-down-s-line transition-transform duration-300"></i>
+        </button>
+        <div class="hidden pb-4">
+          <p class="text-gray-300">Externalizar tu SEO internacional te da acceso a especialistas, dominio nativo del idioma y conocimiento del mercado local. Te permite aplicar estrategias probadas mientras tu equipo se enfoca en el core del negocio. Nuestro equipo aporta años de experiencia en múltiples mercados e idiomas.</p>
+        </div>
+      </div>
+      <div class="border-b border-gray-700">
+        <button class="w-full text-left py-4 flex justify-between items-center hover:text-primary transition-colors duration-300">
+          <span class="text-xl font-medium">¿Cuánto tiempo tardan en verse resultados del SEO internacional?</span>
+          <i class="ri-arrow-down-s-line transition-transform duration-300"></i>
+        </button>
+        <div class="hidden pb-4">
+          <p class="text-gray-300">Normalmente se ven avances entre 3 y 6 meses, según el punto de partida, la competencia y los mercados objetivo. Priorizamos un crecimiento sostenible a largo plazo con prácticas de SEO white-hat que construyen valor duradero para tu marca.</p>
+        </div>
+      </div>
+      <div class="border-b border-gray-700">
+        <button class="w-full text-left py-4 flex justify-between items-center hover:text-primary transition-colors duration-300">
+          <span class="text-xl font-medium">¿Se encargan de la traducción y localización de contenidos?</span>
+          <i class="ri-arrow-down-s-line transition-transform duration-300"></i>
+        </button>
+        <div class="hidden pb-4">
+          <p class="text-gray-300">Sí, ofrecemos servicios integrales de localización. Contamos con hablantes nativos que aseguran que tu contenido conecte con las audiencias locales sin perder efectividad SEO. Cubrimos desde la investigación de keywords hasta la adaptación cultural.</p>
+        </div>
+      </div>
+      <div class="border-b border-gray-700">
+        <button class="w-full text-left py-4 flex justify-between items-center hover:text-primary transition-colors duration-300">
+          <span class="text-xl font-medium">¿Qué tipo de reportes y analítica entregan?</span>
+          <i class="ri-arrow-down-s-line transition-transform duration-300"></i>
+        </button>
+        <div class="hidden pb-4">
+          <p class="text-gray-300">Entregamos reportes mensuales detallados con métricas clave como posiciones, tráfico, conversiones y ROI. Nuestros dashboards personalizados te dan visibilidad en tiempo real del desempeño de tu SEO internacional en todos los mercados e idiomas.</p>
+        </div>
+      </div>
+      <div class="border-b border-gray-700">
+        <button class="w-full text-left py-4 flex justify-between items-center hover:text-primary transition-colors duration-300">
+          <span class="text-xl font-medium">¿Pueden apoyar con link building internacional?</span>
+          <i class="ri-arrow-down-s-line transition-transform duration-300"></i>
+        </button>
+        <div class="hidden pb-4">
+          <p class="text-gray-300">Sí, contamos con relaciones con publishers de calidad en varios países e idiomas. Nuestras estrategias se enfocan en ganar backlinks relevantes y de autoridad que impulsen tu SEO internacional.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="bg-black text-white py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-bold mb-8">¿Listo para impulsar tu presencia digital?</h2>
+    <p class="text-xl mb-8 max-w-3xl mx-auto">Estamos listos para ayudarte a alcanzar los objetivos internacionales de tu negocio y llevar tu estrategia digital al siguiente nivel.</p>
+    <a href="#" class="inline-block bg-primary text-white px-8 py-4 !rounded-button font-medium custom-button whitespace-nowrap hover:bg-white hover:text-[#FF0000] transition-colors duration-300" onclick="document.getElementById('consultationModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';">Comencemos hoy</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black text-white py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col items-center text-center">
+      <a href="#"><img src="https://static.readdy.ai/image/63c1face3153982a9d371d9e2605c50a/28f95b224462cb1a70de312f51c49b10.png" alt="Logo" class="h-8"></a>
+      <p class="mt-6 max-w-md">Transformamos la presencia digital internacional de las empresas con estrategias personalizadas y resultados medibles.</p>
+      <div class="mt-8 flex items-center space-x-6">
+        <a href="mailto:marco@seo-met.com" class="hover:text-primary transition-colors duration-300 flex items-center">
+          <div class="w-5 h-5 flex items-center justify-center mr-2">
+            <i class="ri-mail-line"></i>
+          </div>
+          <span>marco@seo-met.com</span>
+        </a>
+        <a href="tel:+18018355927" class="hover:text-primary transition-colors duration-300 flex items-center">
+          <div class="w-5 h-5 flex items-center justify-center mr-2">
+            <i class="ri-phone-line"></i>
+          </div>
+          <span>+1 801 835 5927</span>
+        </a>
+      </div>
+      <div class="mt-8 flex space-x-4">
+        <a href="https://www.linkedin.com/in/marco-trejo-21249b359" data-readdy="true" class="hover:text-primary transition-colors duration-300" aria-label="LinkedIn">
+          <div class="w-8 h-8 flex items-center justify-center">
+            <i class="ri-linkedin-fill ri-lg"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <p>© 2025 MET. Todos los derechos reservados.</p>
+      <div class="mt-4 md:mt-0 flex space-x-6"></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Modal de consulta -->
+<div id="consultationModal" class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="bg-white p-8 !rounded-lg max-w-sm w-full mx-4 relative" style="max-height: 80vh;">
+    <div class="overflow-y-auto pr-2" style="max-height: calc(80vh - 4rem);">
+      <button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" aria-label="Cerrar modal">
+        <div class="w-8 h-8 flex items-center justify-center">
+          <i class="ri-close-line ri-2x"></i>
+        </div>
+      </button>
+      <h2 id="modalTitle" class="text-2xl font-bold mb-6 text-black">Agenda una consulta gratuita</h2>
+      <form id="consultationForm" class="space-y-6">
+        <div class="space-y-4">
+          <button type="button" class="w-full px-4 py-3 text-left border border-gray-200 !rounded flex items-center hover:border-primary transition-colors duration-300">
+            <div class="w-6 h-6 flex items-center justify-center mr-3">
+              <i class="ri-line-chart-line"></i>
+            </div>
+            <span>Quiero mejorar mi SEO</span>
+          </button>
+          <button type="button" class="w-full px-4 py-3 text-left border border-gray-200 !rounded flex items-center hover:border-primary transition-colors duration-300">
+            <div class="w-6 h-6 flex items-center justify-center mr-3">
+              <i class="ri-global-line"></i>
+            </div>
+            <span>Necesito ayuda con campañas multilingües</span>
+          </button>
+          <button type="button" class="w-full px-4 py-3 text-left border border-gray-200 !rounded flex items-center hover:border-primary transition-colors duration-300">
+            <div class="w-6 h-6 flex items-center justify-center mr-3">
+              <i class="ri-question-line"></i>
+            </div>
+            <span>Tengo dudas sobre los planes</span>
+          </button>
+        </div>
+
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2" for="name">Nombre</label>
+            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-200 !rounded text-gray-700 focus:outline-none focus:border-primary transition-colors duration-300" required>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2" for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-200 !rounded text-gray-700 focus:outline-none focus:border-primary transition-colors duration-300" required>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2" for="message">Tu mensaje</label>
+            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-200 !rounded text-gray-700 focus:outline-none focus:border-primary transition-colors duration-300" required></textarea>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Agenda una reunión</label>
+            <div class="border border-gray-200 !rounded p-4">
+              <div class="flex justify-between items-center mb-4">
+                <button type="button" class="text-gray-500 hover:text-gray-700" aria-label="Mes anterior">
+                  <i class="ri-arrow-left-s-line"></i>
+                </button>
+                <span class="font-medium">Abril 2025</span>
+                <button type="button" class="text-gray-500 hover:text-gray-700" aria-label="Mes siguiente">
+                  <i class="ri-arrow-right-s-line"></i>
+                </button>
+              </div>
+              <div class="grid grid-cols-7 gap-2 text-center mb-2">
+                <span class="text-sm text-gray-500">Lu</span>
+                <span class="text-sm text-gray-500">Ma</span>
+                <span class="text-sm text-gray-500">Mi</span>
+                <span class="text-sm text-gray-500">Ju</span>
+                <span class="text-sm text-gray-500">Vi</span>
+                <span class="text-sm text-gray-500">Sa</span>
+                <span class="text-sm text-gray-500">Do</span>
+              </div>
+              <div class="grid grid-cols-7 gap-2 text-center">
+                <button type="button" class="p-2 text-gray-400">31</button>
+                <button type="button" class="p-2">1</button>
+                <button type="button" class="p-2">2</button>
+                <button type="button" class="p-2">3</button>
+                <button type="button" class="p-2">4</button>
+                <button type="button" class="p-2">5</button>
+                <button type="button" class="p-2">6</button>
+                <button type="button" class="p-2">7</button>
+                <button type="button" class="p-2">8</button>
+                <button type="button" class="p-2">9</button>
+                <button type="button" class="p-2">10</button>
+                <button type="button" class="p-2">11</button>
+                <button type="button" class="p-2">12</button>
+                <button type="button" class="p-2">13</button>
+                <button type="button" class="p-2">14</button>
+                <button type="button" class="p-2">15</button>
+                <button type="button" class="p-2">16</button>
+                <button type="button" class="p-2">17</button>
+                <button type="button" class="p-2 bg-primary text-white !rounded">18</button>
+                <button type="button" class="p-2">19</button>
+                <button type="button" class="p-2">20</button>
+                <button type="button" class="p-2">21</button>
+                <button type="button" class="p-2">22</button>
+                <button type="button" class="p-2">23</button>
+                <button type="button" class="p-2">24</button>
+                <button type="button" class="p-2">25</button>
+                <button type="button" class="p-2">26</button>
+                <button type="button" class="p-2">27</button>
+                <button type="button" class="p-2">28</button>
+                <button type="button" class="p-2">29</button>
+                <button type="button" class="p-2">30</button>
+                <button type="button" class="p-2 text-gray-400">1</button>
+                <button type="button" class="p-2 text-gray-400">2</button>
+                <button type="button" class="p-2 text-gray-400">3</button>
+                <button type="button" class="p-2 text-gray-400">4</button>
+              </div>
+
+              <div class="mt-4">
+                <p class="text-sm text-gray-700 mb-2">Horarios disponibles (GMT-6)</p>
+                <p class="text-xs text-gray-500 mb-2">Todas las horas se muestran en GMT-6 (Ciudad de México)</p>
+                <div class="grid grid-cols-4 gap-2">
+                  <button type="button" class="p-2 text-center border border-primary text-primary !rounded hover:bg-primary hover:text-white transition-colors duration-300">07:00</button>
+                  <button type="button" class="p-2 text-center border border-gray-200 !rounded hover:border-primary transition-colors duration-300">08:00</button>
+                  <button type="button" class="p-2 text-center border border-gray-200 !rounded hover:border-primary transition-colors duration-300">09:00</button>
+                  <button type="button" class="p-2 text-center border border-gray-200 !rounded hover:border-primary transition-colors duration-300">10:00</button>
+                  <button type="button" class="p-2 text-center border border-gray-200 !rounded hover:border-primary transition-colors duration-300">11:00</button>
+                  <button type="button" class="p-2 text-center border border-gray-200 !rounded hover:border-primary transition-colors duration-300">12:00</button>
+                  <button type="button" class="p-2 text-center border border-gray-200 !rounded hover:border-primary transition-colors duration-300">13:00</button>
+                  <button type="button" class="p-2 text-center border border-gray-200 !rounded hover:border-primary transition-colors duration-300">14:00</button>
+                  <button type="button" class="p-2 text-center border border-gray-200 !rounded hover:border-primary transition-colors duration-300">15:00</button>
+                  <button type="button" class="p-2 text-center border border-gray-200 !rounded hover:border-primary transition-colors duration-300">16:00</button>
+                  <button type="button" class="p-2 text-center border border-gray-200 !rounded hover:border-primary transition-colors duration-300">17:00</button>
+                  <button type="button" class="p-2 text-center border border-gray-200 !rounded hover:border-primary transition-colors duration-300">18:00</button>
+                  <button type="button" class="p-2 text-center border border-gray-200 !rounded hover:border-primary transition-colors duration-300">19:00</button>
+                  <button type="button" class="p-2 text-center border border-gray-200 !rounded hover:border-primary transition-colors duration-300">20:00</button>
+                  <button type="button" class="p-2 text-center border border-gray-200 !rounded hover:border-primary transition-colors duration-300">21:00</button>
+                  <button type="button" class="p-2 text-center border border-gray-200 !rounded hover:border-primary transition-colors duration-300">22:00</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <button type="submit" class="w-full bg-primary text-white py-3 !rounded font-medium hover:bg-opacity-90 transition-colors duration-300">Enviar mensaje</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Botón de regreso arriba -->
+<button id="backToTop" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 !rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300" aria-label="Volver arriba">
+  <div class="w-6 h-6 flex items-center justify-center">
+    <i class="ri-arrow-up-line ri-lg"></i>
+  </div>
+</button>
+
+<script>
+window.addEventListener('load', function() {
+  const mainNav = document.getElementById('mainNav');
+  const backToTopButton = document.getElementById('backToTop');
+  const faqButtons = document.querySelectorAll('#faqAccordion button');
+
+  // Scroll suave para anclas
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      if (this.getAttribute('href') !== '#' && !this.hasAttribute('onclick')) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const headerOffset = 100;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        }
+      }
+    });
+  });
+
+  // Acordeón FAQ
+  faqButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const content = button.nextElementSibling;
+      const icon = button.querySelector('i');
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        content.classList.add('hidden');
+        icon.style.transform = 'rotate(0)';
+      }
+    });
+  });
+
+  // Modal
+  const modal = document.getElementById('consultationModal');
+  const startButtons = document.querySelectorAll('a[href="#"]');
+  const closeModalButton = document.getElementById('closeModal');
+  const consultationForm = document.getElementById('consultationForm');
+
+  // Abrir modal desde botones "Comencemos hoy"
+  startButtons.forEach(button => {
+    if (button.textContent.trim() === "Comencemos hoy") {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      });
+    }
+  });
+
+  // Cerrar modal
+  closeModalButton.addEventListener('click', function() {
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  });
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+  // Envío de formulario (simulado)
+  consultationForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const confirmationModal = document.createElement('div');
+    confirmationModal.className = 'fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50';
+    confirmationModal.innerHTML = `
+      <div class="bg-white p-8 !rounded-lg max-w-md w-full mx-4">
+        <h3 class="text-2xl font-bold mb-4 text-black">¡Consulta agendada!</h3>
+        <p class="text-gray-700 mb-6">Gracias por agendar tu consulta. Te enviaremos un correo de confirmación con los detalles de la videollamada.</p>
+        <button class="bg-primary text-white px-6 py-2 !rounded-button">Cerrar</button>
+      </div>
+    `;
+    document.body.appendChild(confirmationModal);
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+    confirmationModal.querySelector('button').addEventListener('click', function() {
+      confirmationModal.remove();
+      consultationForm.reset();
+    });
+  });
+
+  // Efectos de navegación y botón arriba
+  mainNav.addEventListener('mouseenter', function() {
+    mainNav.classList.add('bg-black', 'bg-opacity-80', 'backdrop-blur-sm');
+  });
+  mainNav.addEventListener('mouseleave', function() {
+    if (window.scrollY <= 100) {
+      mainNav.classList.remove('bg-black', 'bg-opacity-80', 'backdrop-blur-sm');
+    }
+  });
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 100) {
+      mainNav.classList.add('bg-black', 'bg-opacity-80', 'backdrop-blur-sm');
+    } else if (!mainNav.matches(':hover')) {
+      mainNav.classList.remove('bg-black', 'bg-opacity-80', 'backdrop-blur-sm');
+    }
+    if (window.scrollY > 300) {
+      backToTopButton.classList.remove('opacity-0', 'invisible');
+      backToTopButton.classList.add('opacity-100', 'visible');
+    } else {
+      backToTopButton.classList.remove('opacity-100', 'visible');
+      backToTopButton.classList.add('opacity-0', 'invisible');
+    }
+  });
+  backToTopButton.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
